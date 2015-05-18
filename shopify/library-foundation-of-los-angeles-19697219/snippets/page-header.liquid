@@ -1,0 +1,50 @@
+{% assign h1Class = "page-header-title" %}
+
+{% if template == "cart" %}
+   {% assign headerClass = "simple-header" %}
+{% elsif template == "404" %}
+   {% assign headerClass = "simple-header" %}
+{% else %}
+   {% assign headerClass = "simple-header" %}
+{% endif %}
+
+<div class="{{ headerClass }}" style="background-image:url({{ 'bg_1.jpg' | asset_url }});">
+  <div class="row">
+    <div class="desktop-12">
+
+      {% if template == 'cart' %}
+      <h1 class="{{ h1Class }}">{{ 'cart.general.title' | t }}</h1>
+
+      {% elsif collection.handle == 'all' %}
+      <h1 class="{{ h1Class }}">The Library Store</h1>
+
+      {% elsif template contains 'collection' and collection.handle %}
+      <h1 class="{{ h1Class }}">{{ collection.title }}</h1>
+
+      {% elsif template == 'blog' %}
+      <h1 class="{{ h1Class }}">{{ blog.title }}</h1>
+
+      {% elsif template == 'index' %}
+      <h1 class="{{ h1Class }}">The Library Store</h1>
+
+      {% elsif template == 'product' %}
+      <h1 class="{{ h1Class }}">The Library Store</h1>
+
+      {% elsif template == 'search' %}
+      <h1 class="{{ h1Class }}">The Library Store</h1>
+
+      {% elsif template == '404' %}
+      <h1 class="{{ h1Class }}">Page not found</h1>
+
+      {% elsif template == 'list-collections' %}
+      <h1 class="{{ h1Class }}">Categories</h1>
+
+      {% elsif template contains 'page' %}
+      <h1 class="{{ h1Class }}">{{ page.title }}</h1>
+
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+

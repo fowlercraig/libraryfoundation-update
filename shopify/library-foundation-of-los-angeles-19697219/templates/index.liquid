@@ -1,0 +1,66 @@
+<div id="store-slider" class="royalslider rsMinW">
+
+{% for i in (1..6) %}
+{% capture display_product %}show_homeslide_item_{{ i }}{% endcapture %}
+{% capture image %}homeslide-item-{{ i }}.jpg{% endcapture %}
+{% capture link %}homeslide_item_{{ i }}_link{% endcapture %}
+{% capture alt %}homeslide_item_{{ i }}_alt{% endcapture %}
+{% capture sub %}homeslide_item_{{ i }}_sub{% endcapture %}
+{% capture dark %}darken_homeslide_{{ i }}{% endcapture %}
+{% if settings[display_product] %}
+
+<div class="slide {% if settings[dark] %}dark{% endif %}" style="background-image:url('{{ image | asset_url }}');">
+  <div class="row">
+    <div class="desktop-12">
+      <div class="row">
+        <div class="desktop-6 tablet-6 mobile-3 text-center boundary">
+          <div class="wrapped">
+            <div class="table">
+              <div class="cell">
+                <div class="wrapper">
+                  <a href="{{ settings[link] }}">
+                    <span class="cat">{{ settings[sub] }}</span>
+                    <h3>{{ settings[alt] }}</h3>
+                    <span class="button hollow">View More</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+{% include 'toolbar' %}
+
+<div id="store-intro">
+  <div class="row">
+    <div class="desktop-8 tablet-4 mobile-3">
+      <h2>{{ settings.store_intro }}</h2>
+    </div>
+    <div class="desktop-4 tablet-2 mobile-3">
+      {% include 'mailchimp' %}
+    </div>
+  </div>
+</div>
+
+<div id="store-collections">
+  <div class="row">
+    {% for collection in collections %}
+
+    <a id="{{ collection.handle }}" href="{{ collection.url }}" class="collection-item desktop-3 tablet-3 mobile-3 text-center">
+      <img src="{{ collection.image.src | img_url: 'large' }}" alt="{{ collection.title }}" class="img-responsive" />
+      <h3 class="title">{{ collection.title }}</h3>
+    </a>
+
+    {% cycle 'clear-product-loop': '', '', '', '<div style="clear:both;"></div>' %}
+    {% endfor %}
+  </div>
+</div>

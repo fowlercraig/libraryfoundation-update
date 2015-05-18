@@ -1,0 +1,16 @@
+{% include 'page-header' %}
+
+<div id="blog" class="row">
+  <div class="desktop-8">
+    {% paginate blog.articles by 10 %}
+    {% for article in blog.articles %}
+    <article class="item">
+      <header>
+        <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+      </header>
+      {{ article.excerpt_or_content }}
+    </article>
+    {% endfor %}
+    {% endpaginate %}
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="row">
+<div class="desktop-11 centered">
+
+{% if cart.item_count > 0 %}
+<form action="/cart" method="post" novalidate class="cart">
+	<header id="cart-header">
+		<div class="row">
+			<hr class="desktop-12" />
+			<div class="desktop-6 tablet-6 mobile-3">{{ 'cart.label.product' | t }}</div>
+			<div class="desktop-6 tablet-6 mobile-3">
+				<div class="row">
+					<div class="desktop-4 tablet-1 mobile-3">{{ 'cart.label.price' | t }}</div>
+					<div class="desktop-4 tablet-1 mobile-3 text-center">{{ 'cart.label.quantity' | t }}</div>
+					<div class="desktop-4 tablet-1 mobile-3 text-right">{{ 'cart.label.total' | t }}</div>
+				</div>
+			</div>
+			<hr class="desktop-12" />
+		</div>
+	</header>
+	<div id="cart-contents">
+		{% for item in cart.items %}
+		<div class="cart-item row" data-id="{{ item.id }}">
+			<div class="desktop-6 tablet-6 mobile-3">
+				<div class="row">
+					<div class="desktop-4 tablet-2 mobile-1">
+						<a href="{{ item.url | within: collections.all }}" class="cart__image">
+							<img src="{{ item | img_url: 'large' }}" alt="{{ item.title | escape }}" class="img-responsive">
+						</a>
+					</div>
+					<div class="desktop-8 tablet-4 mobile-2">
+						<h3 class="title"><a href="{{ item.url }}">{{ item.product.title }}</a></h3>
+						{% if item.variants.first.title != 'Default Title' %}
+						<small>{{ item.variant.title }}</small>
+						{% endif %}
+						<p>{{ item.vendor }}</p>
+						<a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove" data-id="{{ item.id }}">
+							<small>{{ 'cart.general.remove' | t }}</small>
+						</a>
+					</div>
+				</div>
+			</div><!-- Half Grid | Photo & Title -->
+			<div class="desktop-6 tablet-6 mobile-3">
+				<div class="row">
+					<div class="desktop-4 tablet-2 mobile-3">
+						<span class="cart__mini-labels desktop-hide">{{ 'cart.label.price' | t }}</span>
+	          <h3 class="h3">{{ item.price | money }}</h3>
+					</div>
+					<div class="desktop-4 tablet-2 mobile-3 text-center">
+						<span class="cart__mini-labels desktop-hide">{{ 'cart.label.quantity' | t }}</span>
+						<h3 class="qty"><input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}"></h3>
+					</div>
+					<div class="desktop-4 tablet-2 mobile-3 text-right">
+						<span class="cart__mini-labels desktop-hide">{{ 'cart.label.total' | t }}</span>
+						<h3 class="h3">{{ item.line_price | money }}</h3>
+					</div>
+				</div>
+			</div>
+			<hr class="desktop-12 tablet-6 mobile-3" />
+		</div><!-- / Cart Item -->
+		{% endfor %}
+	</div>
+	<div id="cart-final">
+		<div class="row">
+			{% if settings.cart_notes_enable %}
+			<div class="desktop-6 tablet-3 mobile-3">
+				<label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+				<textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+			</div>
+			{% else %}
+			<div class="desktop-6 tablet-3 mobile-3">
+				<div id="cart-tabs" class="tabbed">
+				<menu class="tabber-menu">
+				<a href="#tab-1" class="tabber-handle">Special Instructions</a>
+				<a href="#tab-2" class="tabber-handle">Gift Wrapping</a>
+				</menu>
+				<div class="tabber-tab" id="tab-1">
+				<!--<label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>-->
+				<textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+				</div>
+				<div class="tabber-tab" id="tab-2">
+				{% include 'gift-wrapping' %}
+				</div>
+				</div>
+			</div>
+			{% endif %}
+			<div class="desktop-6 tablet-3 mobile-3 text-right">
+				<div>
+					<span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
+					<span class="h3 cart__subtotal">{{ cart.total_price | money }}</span>
+				</div>
+				<p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
+				<input type="submit" name="update" class="button secondary btn--secondary update-cart" value="{{ 'cart.general.update' | t }}">
+        <input type="submit" name="checkout" class="button primary" value="{{ 'cart.general.checkout' | t }}">
+        {% if additional_checkout_buttons %}
+        <p>{{ content_for_additional_checkout_buttons }}</p>
+        {% endif %}
+			</div>
+		</div>
+	</div>
+</form>
+{% else %}
+<div id="cart-contents">
+	<div class="row">
+		<div class="desktop-12">
+			<div class="alert non-critical">
+  			<p>{{ 'cart.general.empty' | t }} {{ 'cart.general.continue_browsing_html' | t }}</p>
+  		</div>
+  	</div>
+  </div>
+</div>
+{% endif %}
+
+</div>
+</div>

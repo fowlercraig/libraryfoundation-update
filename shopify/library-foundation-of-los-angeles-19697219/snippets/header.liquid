@@ -1,0 +1,46 @@
+{% assign mainURL = "http://lfla.org.s147445.gridserver.com/" %}
+
+
+<header id="head" class="gridlock gridlock-fluid">
+  <div class="row">
+
+    <div id="logo-wrap" class="desktop-1"></div>
+    <nav id="main-nav" class="desktop-12 {% if template == 'index' %}index{% endif %}">
+      <!--<a href="/" id="logo">
+        <span class="logo-wrapper">
+          <span class="face">
+            <span class="swiper-container">
+
+            </span>
+          </span>
+          <img src="http://placehold.it/500x500" class="invisible img-responsive" />
+        </span>
+      </a>-->
+
+    <a href="/" id="logo">
+      <div id="swiper">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background-image:url({{ 'logo_the_library_store_RGB.png' | asset_url }})"></div>
+              <div id="program-logo" class="swiper-slide"  style="background-image:url({{ 'store-logo.png' | asset_url }})"></div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <div class="main-nav">
+      <a href="{{ mainURL }}calendar/">Calendar</a>
+      <a href="{{ mainURL }}calendar/category/aloud/">ALOUD</a>
+      <a href="{{ mainURL }}what-we-fund/">What We Fund</a>
+      <a href="{{ mainURL }}about/">About</a>
+      <a href="{{ mainURL }}support-us/">Support Us</a>
+      <a href="http://library-foundation-of-los-angeles.myshopify.com/">Library Store</a>
+      <a href="{{ mainURL }}blog/">Blog</a>
+      <a href="#" class="search"><i class="ss-gizmo ss-icon">search</i></a>
+    </div>
+    <!--<span class="shifter-handle button right">Menu</span>-->
+    <a href="{{ mainURL }}support-us/become-a-member/" class="button right hide-mobile" id="become-member-btn">Donate</a>
+    <a href="{{ mainURL }}support-us/become-a-member/" class="button right hide-mobile" id="become-member-btn">Join</a>
+    </nav>
+
+  </div>
+</header>

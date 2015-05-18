@@ -1,0 +1,99 @@
+
+
+#signup-form {
+
+  padding: 25px;
+  position: relative;
+  background: @bgGray;
+
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 25px;
+  //   bottom: 25px;
+  //   left: 0px;
+  //   width: 1px;
+  //   background: @lightestGray;
+  // }
+
+
+  #mc_embed_signup {
+    height: auto;
+    width: auto;
+    float: none;
+    > div {
+      height: auto;
+    }
+  }
+
+  .mc-field-group {
+    float: none;
+    width: 100%;
+    min-width: 100%;
+    position: relative;
+  }
+
+  label {
+
+    .cat();
+    color: @gray;
+    font-weight: 500;
+
+  }
+
+  input#mc4wp_email, #mce-EMAIL {
+
+    height: 34px;
+    line-height: 34px;
+    padding: 0 10px;
+    width: 100%;
+    .sentinel();
+    display: inline-block;
+    box-sizing: border-box;
+    text-transform: none;
+    letter-spacing: 0px;
+    margin-bottom: 0;
+    background: @white;
+    border: 1px solid @lightestGray;
+
+    @media @mobile {
+      margin-bottom: 5px;
+    }
+
+    @media @desktop {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .button {
+
+    //box-sizing: border-box;
+    //display: inline-block;
+    width: 100%;
+    color: @white;
+    background: @blue!important;
+    .cat();
+    font-weight: 600!important;
+    height: 34px;
+    line-height: 36px;
+    border: none;
+    position: relative;
+    z-index: 3;
+    border-radius: 2px;
+    transition: 300ms ease;
+    //position: absolute;
+    //bottom: 0;
+    //right: 0;
+
+  }
+
+}
+
+.mc4wp-alert {
+  padding: 10px 25px;
+  background: @bgGray;
+}
+
+
+

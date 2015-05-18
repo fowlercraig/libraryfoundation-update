@@ -1,0 +1,34 @@
+<br>
+<div id="addl" class="">
+
+  <ul>
+
+    <!--<li class="item">
+      <a href="#sizes-box" class="popup">Sizes</a>
+    </li>-->
+
+    <li class="item">
+      <a href="#questions-box" class="popup">Questions</a>
+    </li>
+
+    <li class="item">
+      <a href="/pages/privacy-policy">Return Policy</a>
+    </li>
+
+  </ul>
+
+</div>
+
+
+<div id="sizes-box" class="mfp-hide white-popup-block modal-window zoom-anim-dialog">
+  {{ pages.sizes.content }}
+</div>
+
+<div id="questions-box" class="mfp-hide white-popup-block modal-window zoom-anim-dialog">
+  {{ pages.questions.content }}
+  {% include 'form' %}
+</div>
+
+<div id="returns-box" class="mfp-hide white-popup-block modal-window zoom-anim-dialog">
+  {{ pages.returns.content }}
+</div>

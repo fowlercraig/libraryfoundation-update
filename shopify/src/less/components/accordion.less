@@ -1,0 +1,114 @@
+.accordion {
+  list-style-type:none;
+  padding:0;
+}
+
+.accordion ul {
+  padding:0;
+  margin:0;
+  float:left;
+  display:block;
+  width:100%
+}
+
+.accordion li {
+  cursor:pointer;
+  list-style-type:none;
+  padding:0;
+  margin:0;
+  display:block;
+  width:100%;
+  border-bottom: 1px solid @lighterGray;
+  &:last-child {
+    border-color: transparent;
+  }
+  &:before {
+    display: none;
+  }
+}
+
+.accordion li div {
+  display:block;
+  clear:both;
+  padding-bottom: 15px;
+  padding-left: 25px;
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.accordion a {
+  text-decoration:none;
+  display:block;
+  cursor:pointer;
+}
+
+.accordion {
+
+  .title {
+    .sentinel();
+    color: @black;
+    //font-size: 28px;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    padding-left: 25px;
+
+
+    &:before {
+      font-family: 'SSGizmo';
+      content: '▻';
+      display: block;
+      position: absolute;
+      height: 45px;
+      font-size: 15px;
+      line-height: 45px;
+      left: 0;
+      color: @lighterGray;
+      transition: 300ms ease;
+    }
+
+    &:hover {
+      &:before {
+        color: @textGray;
+        transform: rotate(45deg);
+      }
+    }
+
+  }
+
+  .active {
+
+    .title {
+      &:before {
+        
+        transform: rotate(45deg);
+      }
+    }
+
+  }
+
+}
+
+#addl {
+  ul {
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      a {
+        color: @textGray;
+        .cat();
+        .gotham();
+        font-weight: 500;
+      }
+    }
+  }
+}

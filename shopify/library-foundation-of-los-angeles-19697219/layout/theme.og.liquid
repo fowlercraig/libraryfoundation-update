@@ -1,0 +1,62 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="{{ canonical_url }}" /> 
+  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+  {% include 'fb-open-graph-tags' %}
+  {% include 'twitter-card' %}
+  {{ 'main.min.css' | asset_url | stylesheet_tag }}
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' | script_tag }}
+  {{ 'option_selection.js' | asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {% if template contains 'customers' %}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+  {{ content_for_header }}
+</head>
+
+<body class="gridlock gridlock-fluid">
+  
+  <div id="wrapper">
+  
+    <header id="head">
+      <div class="row">
+        <div id="main_nav">
+          <div class="desktop-2"><h1><a class="button" href="/">{{ shop.name }}</a></h1></div>
+          <nav class="desktop-8">{% for link in linklists.main-menu.links %}<a class="button" href="{{ link.url }}">{{ link.title }}</a>{% endfor %}</nav>
+          <div class="desktop-2 text-right"><a class="button" id="btnCart" href="#">Cart</a></div>
+        </div>
+      </div>
+    </header><!-- Header -->
+    
+    <section id="content"><div>
+    {{ content_for_layout }}
+    
+    </div></section><!-- Content -->
+
+    <footer id="foot">
+      <div class="row">
+        <div class="desktop-3"><a class="logo" href="/">{{ shop.name }}</a></div>
+        <div class="desktop-3">&nbsp;</div>
+        <div class="desktop-3">&nbsp;</div>
+        <div class="desktop-3">&nbsp;</div>
+      </div>
+    </footer><!--Footer-->
+    
+  </div><!-- Wrapper -->
+
+  {{ 'timber.js' | asset_url | script_tag }}
+  {{ 'main.min.js' | asset_url | script_tag }}
+  {{ 'fastclick.min.js' | asset_url | script_tag }}
+  {% include 'photoswipe' %}
+
+</body>
+
+</html>

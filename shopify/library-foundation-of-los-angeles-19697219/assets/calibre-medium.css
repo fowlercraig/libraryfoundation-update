@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CalibreMedium';
+    src: url('calibre-medium.eot');
+    src: url('calibre-medium.eot') format('embedded-opentype'),
+         url('calibre-medium.woff2') format('woff2'),
+         url('calibre-medium.woff') format('woff'),
+         url('calibre-medium.ttf') format('truetype'),
+         url('calibre-medium.svg#CalibreMedium') format('svg');
+}

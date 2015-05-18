@@ -1,0 +1,31 @@
+
+{% comment %}
+{% include 'page-header' %}
+{% endcomment %}
+
+<hr>
+
+<div id="collection-content">
+  <div class="row">
+    {% paginate collection.products by 21 %}
+
+    {% for product in collection.products %}
+    {% include 'product-grid-item' %}
+    {% cycle 'clear-product-loop': '', '', '<div style="clear:both;"></div>' %}
+    {% else %}
+    <div class="desktop-12">
+      <p>{{ 'collections.general.no_matches' | t }}</p>
+    </div>
+    {% endfor %}
+    
+    {% if paginate.pages > 1 %}
+      <hr>
+
+      <div class="text-center desktop-12">
+        {% include 'pagination' %}
+      </div>
+    {% endif %}
+
+    {% endpaginate %}
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<section class="index">
+
+<div class="container">
+  <div class="product-grid row">
+<<<<<<< HEAD:noon-goons-12322107/snippets/index.save.liquid
+  {% for product in collections.all.products %}
+  
+  
+  <div class="product item desktop-4 tablet-3 mobile-3">
+    <div class="meta">
+      <a class="title" href="{{ product.url }}">{{ product.title }}</a>
+      <span class="price">{{ variant.price | money }}{% if variant.price < variant.compare_at_price %} <del>{{ variant.compare_at_price | money }}</del>{% endif %}</span>
+      <a href="{{ product.url }}" class="quicklook">Quick Look</a>
+    </div>
+    <div class="image">
+      <img src="{{ product.images.first | product_img_url: 'master' }}" class='item-thumb img-responsive' alt="{{ shop.name }} {{ product.featured_image.alt | escape }}" />
+    </div>
+  </div>
+  
+  
+  {% endfor %}  
+=======
+  {% for product in collections.all.products %}  
+  {% include 'product-grid-item' %}
+  {% endfor %}	
+>>>>>>> FETCH_HEAD:noon-goons-12322107/templates/index.liquid
+  </div><!--Product Grid-->
+</div>
+
+</section>

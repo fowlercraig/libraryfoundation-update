@@ -1,0 +1,30 @@
+<div class="product item desktop-4 tablet-3 mobile-3 text-center">
+
+  <div class="product_image">
+    <!--<a href="{{ product.url }}" class="quicklook"><i class="ss-icon ss-gizmo">search</i></a>-->
+    <a href="{{ product.url }}">
+    {% if product.images.size > 0 %}
+    <img src="{{ product.images.first | product_img_url: 'large' }}" class='item-thumb img-responsive' alt="{{ shop.name }} {{ product.featured_image.alt | escape }}" />
+    {% else %}
+    <img src="{{ 'nothing.jpg' | asset_url }}" class='item-thumb img-responsive' alt="{{ shop.name }} {{ product.featured_image.alt | escape }}" />
+    {% endif %}
+    </a>
+  </div>
+
+  <a href="{{ product.url }}">  
+    <h3 class="title">{{ product.title }}</h3>
+    <span class="price">
+      {% if product.price_varies %}{{ 'products.general.from' | t }}{% endif %}
+      {{ product.price | money }}
+      {% if sold_out %}
+      <br><strong>{{ 'products.product.sold_out' | t }}</strong>
+      {% endif %}
+      {% if on_sale %}
+      {% assign sale_price =  product.compare_at_price | money %}
+      <br>{{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+      {% endif %}
+    </span>
+  </a>
+  
+
+</div>

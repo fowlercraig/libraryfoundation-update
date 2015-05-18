@@ -1,0 +1,79 @@
+<div id="search">
+  {% if search.performed %}
+  {% paginate search.results by 150 %}
+
+  {% if search.terms == "" %}
+  <div class="row">
+    <div class="desktop-12 expanded-message">
+      <div class="search-field">
+        <form class="search" action="/search">
+          <input type="image" src="{{ 'icon-search.png' | asset_url }}" alt="Go" id="go">
+          <input type="text" name="q" class="search_box" placeholder="Search" value=""  />
+        </form>
+      </div>
+    </div>
+  </div>
+  {% else %}
+
+  {% if search.results == empty %}
+  <div class="row">
+    <div class="desktop-12 expanded-message">
+      <h2>No search results</h2>
+      <span class="subtext">Your search for <strong>"{{ search.terms }}"</strong> did not yield any results. Try searching for something else.</span>
+      <div class="search-field">
+        <form class="search" action="/search">
+          <input type="image" src="{{ 'icon-search.png' | asset_url }}" alt="Go" id="go">
+          <input type="text" name="q" class="search_box" placeholder="Search" value="{{ search.terms | escape }}"  />
+        </form>
+      </div>
+    </div>
+  </div>
+  {% else %}
+
+  <div id="search-header" class="row">
+    <div class="desktop-12 tablet-6 mobile-3">
+      <hr class="divider top">
+      <h3 class="title">Search Results:</h3>
+      <hr class="divider bottom">
+    </div>
+  </div>
+
+  <!-- Begin results -->
+
+
+  <div id="store-collections">
+    <div class="row">
+      {% for item in search.results %}
+      <a href="{{ item.url }}" class="collection-item desktop-3 tablet-3 mobile-3 text-center">
+        {% if item.featured_image.size > 0 %}
+        <img src="{{ item.featured_image | product_img_url: 'large' }}" alt="" class="img-responsive" />
+        {% else %}
+        <img src="{{ 'default-image.jpg' | asset_url }}" alt="" class="img-responsive" />
+        {% endif %}
+        <h3 class="title">{{ item.title }}</h3>
+      </a>
+      {% cycle 'clear-product-loop': '', '', '', '<div style="clear:both;"></div>' %}
+      {% endfor %}
+    </div>
+  </div>
+
+
+  {% endif %}
+  {% endif %}
+
+  {% endpaginate %}
+
+  {% else %}
+
+  <div class="row">
+    <div class="desktop-12 expanded-message">
+      <div class="search-field alert">
+        <form class="search" action="/search">
+          <input type="text" name="q" class="search_box" placeholder="Search" value="" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+</div> <!-- /#search -->

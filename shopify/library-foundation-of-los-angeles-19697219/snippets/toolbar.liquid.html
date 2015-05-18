@@ -1,0 +1,22 @@
+<div id="store-bar" class="toolbar">
+  <div class="row">
+    <div class="desktop-8 tablet-6 mobile-3">
+      <ul class="nav sf-menu">
+      {% for link in linklists.main-menu.links %}
+      <li {% if link.active %}class="current-menu-item"{% endif %}>
+        <a href="{{ link.url }}" class="title site-nav__link">{{ link.title }}</a>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="desktop-4 tablet-2 mobile-3 text-right">
+      <a href="/cart" id="CartToggle">
+        <span class="icon-fallback-text"><span class="icon icon-cart" aria-hidden="true"></span></span>
+        {{ 'layout.cart.title' | t }}
+        (<span id="CartCount">{{ cart.item_count }}</span>
+        {{ 'layout.cart.items_count' | t: count: cart.item_count }}
+        <span id="CartCost">{{ cart.total_price | money }}</span>)
+      </a>
+    </div>
+  </div>
+</div>

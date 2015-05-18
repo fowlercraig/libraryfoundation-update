@@ -1,0 +1,13 @@
+<hr>
+<div id="store-collections">
+  <div class="row">
+    {% for collection in collections %}
+
+    <a id="{{ collection.handle }}" href="{{ collection.url }}" class="collection-item desktop-3 tablet-3 mobile-3 text-center">
+      <img src="{{ collection.image.src | img_url: 'large' }}" alt="{{ collection.title }}" class="img-responsive" />
+      <h3 class="title">{{ collection.title }}</h3>
+    </a>
+    {% cycle 'clear-product-loop': '', '', '', '<div style="clear:both;"></div>' %}
+    {% endfor %}
+  </div>
+</div>

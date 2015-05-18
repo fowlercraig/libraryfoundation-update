@@ -1,0 +1,443 @@
+[
+  {
+    "name": "Store Intro",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "store_intro",
+        "label": "Store Intro"
+      }
+    ]
+  },
+  {
+    "name": "Home Slider",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Slide #1"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_homeslide_item_1",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "homeslide-item-1.jpg",
+        "label": "Image",
+        "max-width": 1600
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_1_link",
+        "label": "Link to"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_1_alt",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_1_sub",
+        "label": "Sub Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "darken_homeslide_1",
+        "label": "Dark BG",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide #2"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_homeslide_item_2",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "homeslide-item-2.jpg",
+        "label": "Image",
+        "max-width": 1600
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_2_link",
+        "label": "Link to"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_2_alt",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_2_sub",
+        "label": "Sub Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "darken_homeslide_2",
+        "label": "Dark BG",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide #3"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_homeslide_item_3",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "homeslide-item-3.jpg",
+        "label": "Image",
+        "max-width": 1600
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_3_link",
+        "label": "Link to"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_3_alt",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_3_sub",
+        "label": "Sub Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "darken_homeslide_3",
+        "label": "Dark BG",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide #4"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_homeslide_item_4",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "homeslide-item-4.jpg",
+        "label": "Image",
+        "max-width": 1600
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_4_link",
+        "label": "Link to"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_4_alt",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "homeslide_item_4_sub",
+        "label": "Sub Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "darken_homeslide_4",
+        "label": "Dark BG",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Collection Sizing",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "collection_name_1",
+        "label": "Slide #1",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "collection_size_1"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_name_2",
+        "label": "Slide #2",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "collection_size_2"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_name_3",
+        "label": "Slide #3",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "collection_size_3"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_name_4",
+        "label": "Slide #4",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "collection_size_4"
+      }
+    ]
+  },
+  {
+    "name": "Footer Info",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "left_content",
+        "label": "Left Content"
+      },
+      {
+        "type": "textarea",
+        "id": "right_content",
+        "label": "Right Content"
+      }
+    ]
+  },
+  {
+    "name": "Social Links",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Social Link #1"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_item_1",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "show_social_image_1",
+        "label": "Image",
+        "options": [
+          {
+            "value": "facebook",
+            "label": "Facebook"
+          },
+          {
+            "value": "twitter",
+            "label": "Twitter"
+          },
+          {
+            "value": "pinterest",
+            "label": "Pinterest"
+          },
+          {
+            "value": "flickr",
+            "label": "Flickr"
+          },
+          {
+            "value": "instagram",
+            "label": "Instagram"
+          }
+        ],
+        "default": "facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_item_1_link",
+        "label": "Link to"
+      },
+      {
+        "type": "paragraph",
+        "content": "Social Link #2"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_item_2",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "show_social_image_2",
+        "label": "Image",
+        "options": [
+          {
+            "value": "facebook",
+            "label": "Facebook"
+          },
+          {
+            "value": "twitter",
+            "label": "Twitter"
+          },
+          {
+            "value": "pinterest",
+            "label": "Pinterest"
+          },
+          {
+            "value": "flickr",
+            "label": "Flickr"
+          },
+          {
+            "value": "instagram",
+            "label": "Instagram"
+          }
+        ],
+        "default": "facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_item_2_link",
+        "label": "Link to"
+      },
+      {
+        "type": "paragraph",
+        "content": "Social Link #3"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_item_3",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "show_social_image_3",
+        "label": "Image",
+        "options": [
+          {
+            "value": "facebook",
+            "label": "Facebook"
+          },
+          {
+            "value": "twitter",
+            "label": "Twitter"
+          },
+          {
+            "value": "pinterest",
+            "label": "Pinterest"
+          },
+          {
+            "value": "flickr",
+            "label": "Flickr"
+          },
+          {
+            "value": "instagram",
+            "label": "Instagram"
+          }
+        ],
+        "default": "facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_item_3_link",
+        "label": "Link to"
+      },
+      {
+        "type": "paragraph",
+        "content": "Social Link #4"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_item_4",
+        "label": "Show?"
+      },
+      {
+        "type": "select",
+        "id": "show_social_image_4",
+        "label": "Image",
+        "options": [
+          {
+            "value": "facebook",
+            "label": "Facebook"
+          },
+          {
+            "value": "twitter",
+            "label": "Twitter"
+          },
+          {
+            "value": "pinterest",
+            "label": "Pinterest"
+          },
+          {
+            "value": "flickr",
+            "label": "Flickr"
+          },
+          {
+            "value": "instagram",
+            "label": "Instagram"
+          }
+        ],
+        "default": "facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_item_4_link",
+        "label": "Link to"
+      },
+      {
+        "type": "paragraph",
+        "content": "Social Link #5"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_item_5",
+        "label": "Show?"
+      },
+      {
+        "type": "select",
+        "id": "show_social_image_5",
+        "label": "Image",
+        "options": [
+          {
+            "value": "facebook",
+            "label": "Facebook"
+          },
+          {
+            "value": "twitter",
+            "label": "Twitter"
+          },
+          {
+            "value": "pinterest",
+            "label": "Pinterest"
+          },
+          {
+            "value": "flickr",
+            "label": "Flickr"
+          },
+          {
+            "value": "instagram",
+            "label": "Instagram"
+          }
+        ],
+        "default": "facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_item_5_link",
+        "label": "Link to"
+      }
+    ]
+  }
+]
