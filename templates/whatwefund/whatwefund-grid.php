@@ -87,7 +87,7 @@
 
   $category = $_GET['cat'];
 
-  var_dump($category);
+  //var_dump($category);
 
 ?>
 

@@ -1,9 +1,9 @@
 Yolo jenkins
 
-<?php 
-$temp = $wp_query; 
-$wp_query = null; 
-$wp_query = new WP_Query(); 
+<?php
+$temp = $wp_query;
+$wp_query = null;
+$wp_query = new WP_Query();
 $wp_query->query('p=4335&post_type=product'); ?>
 
 
@@ -11,11 +11,11 @@ $wp_query->query('p=4335&post_type=product'); ?>
   <div id="donation-module">
     <?php woocommerce_get_template_part( 'content', 'single-product' ); ?>
   </div>
-  <p>You may also make a contribution over the phone by calling (213) 228-7500.</p>
+  <p>We ask that you make donation of $10 or more. You may also make a contribution over the phone by calling (213) 228-7500.</p>
 <?php endwhile; ?>
 
 
-<?php 
-$wp_query = null; 
+<?php
+$wp_query = null;
   $wp_query = $temp;  // Reset
   ?>
