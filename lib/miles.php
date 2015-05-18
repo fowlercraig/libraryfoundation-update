@@ -89,12 +89,24 @@ function book_ordered($order_id, $event_id = null, $show_titles = false) {
 **/
 function wc_checkout_add_ons_conditionally_show_donation_add_on() {
 
-    wc_enqueue_js( "
-        if($('tr.aloud-event').length == 0) {
-        	$( '#wc_checkout_add_ons_5_field' ).hide();
-        }
+    wc_enqueue_js("
 
-    " );
+    	if($('tr.aloud-event').length == 0) {
+      	$( '#wc_checkout_add_ons' ).hide();
+      }
+
+      setTimeout(function(){
+    	if($('.fee').length == 0) {
+
+
+    	} else {
+    		$( '#wc_checkout_add_ons' ).show();
+
+    	}
+    },2000)
+
+    ");
+
 }
 add_action( 'wp_enqueue_scripts', 'wc_checkout_add_ons_conditionally_show_donation_add_on' );
 
@@ -174,8 +186,8 @@ function lf_wc_customer_order_csv_export_order_headers( $column_headers ) {
 	unset( $column_headers['myfield4']);
 	unset( $column_headers['myfield26']);
 	unset( $column_headers['shipping_country']);
-	
-	
+
+
 	$new_headers = array (
 		'net_revenue'	=> 'Net Revenue',
 		'stripe_fee'	=> 'Stripe Fee',
@@ -189,7 +201,7 @@ add_filter( 'wc_customer_order_csv_export_order_headers', 'lf_wc_customer_order_
 function lf_wc_csv_export_reorder_columns( $column_headers ) {
 	//echo '<pre>'.print_r($column_headers,true).'</pre><hr><hr>';
 	$new_column_headers = array();
-	
+
 	$purge_array_billing = array(
 		'_billing_myfield4'		=> $column_headers['_billing_myfield4'],
 		'billing_last_name'		=> $column_headers['billing_last_name'],
@@ -211,7 +223,7 @@ function lf_wc_csv_export_reorder_columns( $column_headers ) {
 		'order_discount'		=> $column_headers['order_discount'],
 		'discount_total'		=> $column_headers['discount_total']
 	);
-	
+
 	$purge_array_status = array (
 		'shipping_company'		=> $column_headers['shipping_company'],
 		'shipping_first_name'	=> $column_headers['shipping_first_name'],
@@ -223,7 +235,7 @@ function lf_wc_csv_export_reorder_columns( $column_headers ) {
 		'shipping_postcode'		=> $column_headers['shipping_postcode'],
 		'status'				=> $column_headers['status']
 	);
-	
+
 	$purage_array_order_total = array(
 		'net_revenue'			=> $column_headers['net_revenue'],
 		'stripe_fee'			=> $column_headers['stripe_fee'],
@@ -231,22 +243,22 @@ function lf_wc_csv_export_reorder_columns( $column_headers ) {
 		'item_refunded'			=> $column_headers['item_refunded'],
 		'refunded_total'		=> $column_headers['refunded_total']
 	);
-	
-	
-	// Remove all the columns from the above arrays from the column list so they 
+
+
+	// Remove all the columns from the above arrays from the column list so they
 	// can be readded back in the appropriate spot
 	foreach(array_keys(array_merge(
-						$purge_array_billing, 
+						$purge_array_billing,
 						$purge_array_status,
 						$purage_array_order_total
 						)
 					) as $field) {
 		unset($column_headers[$field]);
 	}
-	
+
 	foreach ( $column_headers as $key => $value ) {
-		$new_column_headers[ $key ] = $value;	
-		
+		$new_column_headers[ $key ] = $value;
+
 		switch($key) {
 			case 'order_date':
 				foreach($purge_array_billing as $pkey => $pvalue) {
@@ -261,12 +273,12 @@ function lf_wc_csv_export_reorder_columns( $column_headers ) {
 			case 'order_total':
 				foreach($purage_array_order_total as $pkey => $pvalue) {
 					$new_column_headers[$pkey] = $pvalue;
-				} 
+				}
 				break;
 			default:
 		}
 	}
-	
+
 	//echo '<pre>'.print_r($new_column_headers,true).'</pre><hr><hr>';
 	//die;
 	return $new_column_headers;
@@ -276,7 +288,7 @@ function lf_wc_csv_export_reorder_columns( $column_headers ) {
 add_filter( 'wc_customer_order_csv_export_order_headers', 'lf_wc_csv_export_reorder_columns' , 100);
 
 
-// Adding in custom option to not show free orders				
+// Adding in custom option to not show free orders
 function lf_wc_customer_order_csv_export_settings($settings, $tab_id) {
 
 	if($tab_id == "export") {
@@ -294,11 +306,11 @@ function lf_wc_customer_order_csv_export_settings($settings, $tab_id) {
 					'class'    => 'wc-enhanced-select chosen_select show_if_orders'
 				);
 			}
-			
+
 		}
-		return $new_settings;	
+		return $new_settings;
 	}
-	
+
 	return $settings;
 }
 
@@ -307,7 +319,7 @@ add_filter('wc_customer_order_csv_export_settings', 'lf_wc_customer_order_csv_ex
 
 function lf_wc_customer_order_csv_export_admin_query_args($query_args, $export_type, $obj) {
 
-	if(isset($_POST['wc_customer_order_csv_export_hide_free_orders']) 
+	if(isset($_POST['wc_customer_order_csv_export_hide_free_orders'])
 		&& $_POST['wc_customer_order_csv_export_hide_free_orders'] == 1
 		&& $export_type == 'orders') {
 		$query_args['meta_query'] = array (array(
@@ -315,7 +327,7 @@ function lf_wc_customer_order_csv_export_admin_query_args($query_args, $export_t
 			'value' 	=> '0.00',
 			'compare' 	=> '>'
 		));
-			
+
 	}
 
 	return $query_args;
