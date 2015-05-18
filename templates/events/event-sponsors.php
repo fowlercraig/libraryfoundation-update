@@ -1,8 +1,6 @@
-<div id="sponsor-hat"></div>
-
 <?php // if ( get_field('sponsor_gallery') OR get_field('sponsors_options') ): ?>
 
-
+<?php if ( !get_field('sponsors_options')): ?>
 
 <div id="sponsors" class="sponsor-list row">
 
@@ -62,4 +60,4 @@
 
 </div>
 
-<?php // endif; ?>
+<?php  endif; ?>

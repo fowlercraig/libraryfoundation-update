@@ -18,13 +18,26 @@ $event_id = get_the_ID();
 
 ?>
 
-<?php 
+<?php
 
   include locate_template('templates/event-header.php');
   include locate_template('templates/event-bar.php');
   include locate_template('templates/event-content.php');
   include locate_template('templates/flex-content.php');
-  include locate_template('templates/events/event-sponsors.php');
-  include locate_template('templates/events/event-faq.php');
+
+  echo '<div id="sponsor-hat"></div>';
+
+  if( is_tax( 'tribe_events_cat', 'aloud' )) {
+
+    include locate_template('templates/events/event-faq.php');
+    include locate_template('templates/events/event-sponsors.php');
+
+  } else {
+
+    include locate_template('templates/events/event-sponsors.php');
+    include locate_template('templates/events/event-faq.php');
+
+  }
+
 
 ?>
