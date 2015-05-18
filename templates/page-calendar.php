@@ -5,6 +5,7 @@ $eventCat = get_sub_field('event_category_slug');
 $args = array(
   'post_type' => 'tribe_events',
   'posts_per_page'=> -1,
+  'order'          => 'DESC',
   'tax_query' => array(
     array(
       'taxonomy' => 'tribe_events_cat',
@@ -18,9 +19,15 @@ $args = array(
       'operator' => 'NOT IN'
       ),
     ),
-
-  'eventDisplay' => 'upcoming',
-  );
+  'meta_query'   => array(
+        array(
+          'key'      => '_EventStartDate',
+          'value'    => date('Y-m-d'),
+          'compare'  => '>'
+        )
+      ),
+  'eventDisplay' => 'all',
+);
 
 $temp = $wp_query;
 $wp_query = null;
@@ -30,14 +37,28 @@ $wp_query->query($args);
 $old_args = array(
   'post_type' => 'tribe_events',
   'posts_per_page'=> -1,
+  'order'          => 'DESC',
   'tax_query' => array(
     array(
       'taxonomy' => 'tribe_events_cat',
       'field'    => 'slug',
       'terms'    => $eventCat,
       ),
+    array(
+      'taxonomy' => 'tribe_events_cat',
+      'field'    => 'slug',
+      'terms'    => array('hidden'),
+      'operator' => 'NOT IN'
+      ),
     ),
-  'eventDisplay' => 'past',
+  'meta_query'   => array(
+        array(
+          'key'      => '_EventStartDate',
+          'value'    => date('Y-m-d'),
+          'compare'  => '<'
+        )
+      ),
+  'eventDisplay' => 'all',
   );
 
 $old_temp = $old_wp_query;
