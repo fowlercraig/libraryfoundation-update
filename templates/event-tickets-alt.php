@@ -4,8 +4,8 @@
 
 $(document).ready(function(){
 
-<?php 
-  while ( have_rows('password_protected_2', 'options') ) : the_row(); 
+<?php
+  while ( have_rows('password_protected_2', 'options') ) : the_row();
 
   $ticket_name = get_sub_field('event_name');
   $ticket_name = preg_replace('/[^A-Za-z0-9]/', '', $ticket_name);
@@ -13,7 +13,7 @@ $(document).ready(function(){
   $ticket_name = strtolower($ticket_name);
 
 ?>
-  
+
   $(".ticket_<?php echo $ticket_name; ?> .tickets_name").append('<a href="#modal_<?php echo $ticket_name; ?>_box" class="alert">Members Only: Click to unlock</a>');
   $(".ticket_<?php echo $ticket_name; ?> .quantity input").prop('disabled', true);
 
@@ -40,22 +40,22 @@ $(document).ready(function(){
   $(window).keydown(function(event){
 
     if(event.keyCode == 13) {
-      
+
       event.preventDefault();
-      
+
       if( $("#loginpassword_<?php echo $ticket_name; ?>").val()=="<?php the_sub_field('password'); ?>") {
-        
+
         $(".ticket_<?php echo $ticket_name; ?> .quantity input").prop('disabled', false);
         $.magnificPopup.close();
         $(".quantity input").stepper("enable");
         $(".alert").addClass('active').text("Awesome, you're in.");
 
       } else {
-        
+
        // alert("Please try again");
-      
+
       }
-    
+
       return false;
     }
 
@@ -109,14 +109,8 @@ $(document).ready(function(){
 <?php // Heres where the boxes go ?>
 
 <?php if( have_rows('password_protected_2', 'options') ): ?>
-<?php 
-  while ( have_rows('password_protected_2', 'options') ) : the_row(); 
-
-  $ticket_name = get_sub_field('event_name');
-  $ticket_name = preg_replace('/[^A-Za-z0-9]/', '', $ticket_name);
-  // convert the string to all lowercase
-  $ticket_name = strtolower($ticket_name);
-
+<?php
+  while ( have_rows('password_protected_2', 'options') ) : the_row();
 ?>
 
 <div id="modal_<?php echo $ticket_name; ?>_box" class="pass mfp-hide white-popup-block modal-window">
