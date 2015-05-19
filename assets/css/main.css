@@ -5315,7 +5315,8 @@ html:hover [class^="ss-"] {
 #donation-module .woocommerce-error li {
   color: #008bbe;
 }
-#donation-module .product_meta {
+#donation-module .product_meta,
+#donation-module .price {
   display: none;
 }
 #donation-module .selecter .selecter-selected {
@@ -10030,13 +10031,15 @@ p.demo_store {
   background: #333333;
   padding: 10px 0;
 }
-#home-upcoming {
+#home-upcoming,
+#archive--newest {
   background: #f8f8f8;
   padding: 30px 0 30px;
   overflow: hidden;
   position: relative;
 }
-#home-upcoming .carouselBtn {
+#home-upcoming .carouselBtn,
+#archive--newest .carouselBtn {
   position: absolute;
   top: 50%;
   height: 50px;
@@ -10051,30 +10054,38 @@ p.demo_store {
   -webkit-transition: 300ms ease;
           transition: 300ms ease;
 }
-#home-upcoming .carouselBtn:hover {
+#home-upcoming .carouselBtn:hover,
+#archive--newest .carouselBtn:hover {
   background: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
-#home-upcoming .carouselBtn.disabled {
+#home-upcoming .carouselBtn.disabled,
+#archive--newest .carouselBtn.disabled {
   opacity: 0!important;
 }
-#home-upcoming .carouselBtn.prevBtn {
+#home-upcoming .carouselBtn.prevBtn,
+#archive--newest .carouselBtn.prevBtn {
   left: 0;
 }
-#home-upcoming .carouselBtn.nextBtn {
+#home-upcoming .carouselBtn.nextBtn,
+#archive--newest .carouselBtn.nextBtn {
   right: 0;
 }
-#home-upcoming:hover .carouselBtn {
+#home-upcoming:hover .carouselBtn,
+#archive--newest:hover .carouselBtn {
   opacity: 1;
 }
-#home-upcoming .selecter {
+#home-upcoming .selecter,
+#archive--newest .selecter {
   text-align: left;
   margin-top: 0;
 }
-#home-upcoming header {
+#home-upcoming header,
+#archive--newest header {
   margin-bottom: 2.08333333%;
 }
-#home-upcoming header h3 {
+#home-upcoming header h3,
+#archive--newest header h3 {
   margin: 8px 0 2px;
   font-weight: bold;
   color: #008bbe;
@@ -10088,26 +10099,34 @@ p.demo_store {
   font-size: 18px;
   letter-spacing: 1px;
 }
-#home-upcoming header p {
+#home-upcoming header p,
+#archive--newest header p {
   margin: 0;
   font-size: 18px;
   font-family: 'Sentinel', serif;
   text-rendering: optimizeLegibility;
 }
 @media screen and (min-width: 320px) {
-  #home-upcoming header p {
+  #home-upcoming header p,
+  #archive--newest header p {
     line-height: 1.3;
     margin-bottom: 10px;
   }
 }
 @media screen and (min-width: 740px) {
-  #home-upcoming header p {
+  #home-upcoming header p,
+  #archive--newest header p {
     line-height: 1.5;
     margin-bottom: 0;
   }
 }
-#home-upcoming .button {
+#home-upcoming .button,
+#archive--newest .button {
   font-weight: 500!important;
+}
+#archive--newest {
+  background: transparent;
+  margin-top: 0;
 }
 #upcoming-events-carousel .slide {
   margin: 0;
@@ -11645,14 +11664,14 @@ animated buttons - animate the text inside prev and next buttons
   height: 60px;
   max-width: 60px;
 }
+#head.stuck #swiper.pushover .swiper-wrapper {
+  left: 38px;
+}
 #head.stuck .swiper-container {
   width: 60px;
   height: 60px;
   max-width: 60px;
   position: relative;
-}
-#head.stuck .swiper-container .swiper-wrapper {
-  left: 38px;
 }
 #head.stuck .swiper-slide {
   background-position: center;

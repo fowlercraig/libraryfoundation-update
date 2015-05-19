@@ -38,7 +38,7 @@
     if ($('body').is(aloudClasses)) {
 
       //alert('ALOUD');
-      $('#swiper').addClass('aloud-logo');
+      $('#swiper').addClass('aloud-logo pushover');
 
       setTimeout(function(){
         swiper.slideTo(1);
@@ -51,7 +51,7 @@
     if ($('body').is(ylClasses)) {
 
       //alert('YL');
-      $('#swiper').addClass('yl-logo');
+      $('#swiper').addClass('yl-log pushover');
 
       setTimeout(function(){
         swiper.slideTo(1);
@@ -64,7 +64,7 @@
     if ($('body').is(memberClasses)) {
 
       //alert('ALOUD');
-      $('#swiper').addClass('member-logo');
+      $('#swiper').addClass('member-logo pushover');
 
       setTimeout(function(){
         swiper.slideTo(1);
@@ -77,7 +77,7 @@
     if ($('body').is(lsClasses)) {
 
       //alert('Library Store!');
-      $('#swiper').addClass('ls-logo');
+      $('#swiper').addClass('ls-logo pushover');
 
       setTimeout(function(){
         swiper.slideTo(1);
@@ -90,7 +90,7 @@
     if ($('body').is(councilClasses)) {
 
       //alert('Library Store!');
-      $('#swiper').addClass('council-logo');
+      $('#swiper').addClass('council-logo pushover');
 
       setTimeout(function(){
         swiper.slideTo(1);

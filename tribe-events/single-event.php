@@ -27,7 +27,8 @@ $event_id = get_the_ID();
 
   echo '<div id="sponsor-hat"></div>';
 
-  if( is_tax( 'tribe_events_cat', 'aloud' )) {
+  //if( is_tax( 'tribe_events_cat', 'aloud' )) {
+  if( has_term( 'aloud', 'tribe_events_cat' ) ) {
 
     include locate_template('templates/events/event-faq.php');
     include locate_template('templates/events/event-sponsors.php');

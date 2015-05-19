@@ -425,12 +425,12 @@ $('.tribe-bar-filters .tribe-events-button')
     // instead of a settings object
     ]
   });
-  $("#home-upcoming .prevBtn")
+  $("#home-upcoming .prevBtn, #archive--newest .prevBtn")
   .click(function() {
     $('#upcoming-events-carousel')
     .slick('slickPrev');
   });
-  $("#home-upcoming .nextBtn")
+  $("#home-upcoming .nextBtn, #archive--newest .nextBtn")
   .click(function() {
     $('#upcoming-events-carousel')
     .slick('slickNext');

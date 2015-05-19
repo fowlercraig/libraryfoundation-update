@@ -13,16 +13,16 @@
 
 ?>
 
-  <?php 
-  $temp = $wp_query; 
-  $wp_query = null; 
-  $wp_query = new WP_Query(); 
+  <?php
+  $temp = $wp_query;
+  $wp_query = null;
+  $wp_query = new WP_Query();
   $wp_query->query('p=3013&post_type=product'); ?>
 
 <div class="complex membership-level<?php echo $mClass; echo $nOverlay;  ?>" style="background-image:url(<?php echo $bg;  ?>);">
   <div class="row">
     <div class="desktop-12">
-      
+
     </div>
     <div class="desktop-6 tablet-6 mobile-3">
       <h2 class="member-level-title"><?php the_sub_field('title'); ?></h2>
@@ -36,14 +36,14 @@
       <div id="donation-module">
       <?php woocommerce_get_template_part( 'content', 'single-product' ); ?>
       </div>
-      <p>You may also make a contribution over the phone by calling (213) 228-7500.</p>
+      <p>We ask that you make donation of $10 or more. You may also make a contribution over the phone by calling (213) 228-7500.</p>
       <?php endwhile; ?>
       <?php endif; ?>
     </div>
   </div>
 </div>
 
-<?php 
-  $wp_query = null; 
+<?php
+  $wp_query = null;
   $wp_query = $temp;  // Reset
 ?>
