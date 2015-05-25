@@ -10,7 +10,7 @@
       <header class="desktop-12 tablet-6 mobile-3">
         <div class="row">
           <div class="desktop-6 tablet-3 mobile-half">
-            <h2 class="title">Newest</h2>
+            <h2 class="title">Featured</h2>
           </div>
           <div class="desktop-6 tablet-3 mobile-half text-right">
             <div class="row">
@@ -50,7 +50,10 @@
       </div>
 
       <div class="desktop-12 tablet-6 mobile-3">
-        <?php include locate_template('/templates/media/newest.php' ); ?>
+        <div id="upcoming-events-carousel" class="newest row">
+          <?php include locate_template('/templates/media/sticky.php' ); ?>
+          <?php include locate_template('/templates/media/newest.php' ); ?>
+        </div>
       </div>
     </div>
   </div>

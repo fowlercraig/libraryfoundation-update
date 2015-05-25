@@ -257,17 +257,19 @@
     height: 50px;
     line-height: 63px;
     width: 50px;
-    opacity: 0;
+    opacity: 1;
     text-align: center;
     margin-top: -25px;
     z-index: 99;
     font-size: 36px;
     cursor: pointer;
     transition: 300ms ease;
+    background: @white75;
+    box-shadow: 0 0 15px @black25;
 
     &:hover {
       background: @white;
-      box-shadow: 0 0 15px @black25;
+      //box-shadow: 0 0 15px @black25;
     }
 
     &.disabled {

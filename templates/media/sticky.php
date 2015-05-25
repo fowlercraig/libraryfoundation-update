@@ -8,7 +8,7 @@
       array(
         'key'      => 'media_featured_toggle',
         'value'    => '1',
-        'compare'  => 'NOT EXISTS'
+        'compare'  => '=='
       )
     ),
   );
@@ -18,6 +18,7 @@
   $wp_query->query($args);
   $format = '';
 ?>
+
 
 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
@@ -121,7 +122,6 @@
 </div>
 
 <?php endwhile; ?>
-
 
 <?php
   $wp_query = null;

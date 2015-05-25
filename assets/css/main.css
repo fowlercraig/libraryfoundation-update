@@ -9614,7 +9614,8 @@ p.demo_store {
 @media screen and (min-width: 980px) {
   .toolbar .nav > li > a,
   .toolbar .nav > li button {
-    padding: 0 8px;
+    padding: 0 10px;
+    letter-spacing: 0;
   }
 }
 @media screen and (min-width: 1220px) {
@@ -10055,7 +10056,7 @@ p.demo_store {
   height: 50px;
   line-height: 63px;
   width: 50px;
-  opacity: 0;
+  opacity: 1;
   text-align: center;
   margin-top: -25px;
   z-index: 99;
@@ -10063,11 +10064,12 @@ p.demo_store {
   cursor: pointer;
   -webkit-transition: 300ms ease;
           transition: 300ms ease;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
 #home-upcoming .carouselBtn:hover,
 #archive--newest .carouselBtn:hover {
   background: #ffffff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
 #home-upcoming .carouselBtn.disabled,
 #archive--newest .carouselBtn.disabled {
@@ -11252,7 +11254,7 @@ animated buttons - animate the text inside prev and next buttons
 }
 #archive--wrapper > div,
 #related-media > div {
-  margin: 50px 0;
+  margin: 10px 0 50px;
 }
 #archive--wrapper header,
 #related-media header {
@@ -12032,6 +12034,9 @@ table.cart .product-subtotal {
 #tickets-form {
   position: relative;
 }
+#tickets-form h2 {
+  font-weight: 200;
+}
 #tickets-form .mfp-close {
   color: rgba(0, 0, 0, 0.5);
 }
@@ -12039,6 +12044,7 @@ table.cart .product-subtotal {
   margin-top: 0;
 }
 #tickets-form .add-to-cart {
+  padding-top: 15px;
   padding-bottom: 0;
 }
 #tickets-form input[type=number] {
@@ -12475,6 +12481,9 @@ table.cart .product-subtotal {
 }
 .tribe-events-sub-nav a:hover {
   color: #858585;
+}
+.tribe-events-sub-nav .tribe-events-nav-next {
+  margin-right: 15px!important;
 }
 #event-nav-bar {
   border-top: 2px solid #f8f8f8;
