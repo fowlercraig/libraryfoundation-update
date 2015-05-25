@@ -51,7 +51,7 @@
     if ($('body').is(ylClasses)) {
 
       //alert('YL');
-      $('#swiper').addClass('yl-log pushover');
+      $('#swiper').addClass('yl-logo pushover');
 
       setTimeout(function(){
         swiper.slideTo(1);

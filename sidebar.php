@@ -1,4 +1,4 @@
-<div id="sidebar-wrapper" class="desktop-4 right">
+<div id="sidebar-wrapper" class="desktop-4 tablet-2 mobile-3 right">
 
   <aside class="sidebar" id="event-sidebar">
     <?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>

@@ -99,4 +99,11 @@ $current_url = esc_url( add_query_arg( $wp->query_string, '', home_url( $wp->req
 	</div>
 </div>
 
+<script>
+	$("#toolbar .nav li a").each(function() {
+   var _href = $(this).attr("href");
+   $(this).attr("href", _href + '?calendar=true');
+	});
+</script>
+
 <?php do_action( 'tribe_events_bar_after_template' ) ?>

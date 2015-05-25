@@ -9683,6 +9683,11 @@ p.demo_store {
   padding-bottom: 5.20833333%;
   border-bottom: 2px solid #f8f8f8;
 }
+.blog-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 .blog-item .title {
   font-family: 'Sentinel', serif;
   text-rendering: optimizeLegibility;
@@ -9757,6 +9762,11 @@ p.demo_store {
 }
 .pagination .page-numbers:nth-last-child(2) {
   border-right: 2px solid #dddddd;
+}
+.blog-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .page-section {
   padding: 3.125% 0;

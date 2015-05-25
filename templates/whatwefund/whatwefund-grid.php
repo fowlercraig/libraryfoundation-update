@@ -87,8 +87,6 @@
 
   $category = $_GET['cat'];
 
-  //var_dump($category);
-
 ?>
 
 <script>
@@ -103,6 +101,10 @@
 
       $('#whatwefund-filters .button').removeClass('active');
       $('#whatwefund-filters .button.<?php echo $category; ?>').addClass('active');
+
+      $('html, body').animate({
+        scrollTop: $('#whatwefund-filters').offset().top - 50
+      }, 300);
 
     },200);
 
