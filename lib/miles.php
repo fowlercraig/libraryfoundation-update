@@ -106,12 +106,13 @@ function wc_checkout_add_ons_conditionally_show_donation_add_on() {
     },2000);
 
     setTimeout(function(){
-	    		if($('.fee').length == 0){
+  		if($('.fee').length == 0){
+  			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'none');
+  		}else{
+  			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'block');
+  		}
+  	},2000);
 
-	    		}else{
-	    			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'block');
-	    		}
-	    	},2000);
 
     ");
 
