@@ -25,6 +25,18 @@
 
   }
 
+  a {
+    color: @blue;
+    border-bottom-color: lighten(@blue, 10%);
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    .sentinel();
+    a {
+      text-decoration: underline;
+    }
+  }
+
   .posted {
 
     margin-top: 0;
@@ -44,6 +56,25 @@
 
   .thumbnail {
     display: block;
+  }
+
+  footer {
+    .share-link {
+      .font_size(28);
+      position: relative;
+      top: .325em;
+      color: @lighterGray;
+      &:hover {
+        color: @aloudpink;
+      }
+    }
+  }
+
+  &.single {
+
+    margin-bottom: 0;
+    border-bottom: 0;
+
   }
 
 }

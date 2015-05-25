@@ -5,8 +5,11 @@
     <p class="posted"><?php the_time('l, M jS, Y'); ?></p>
     <?php // echo get_the_category_list(); ?>
   </header>
-  <?php the_excerpt(); ?>
-  <a href="<?php the_permalink(); ?>" class="button">Read More</a>
-  <a target="blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">twitter</i></a>
-  <a target="blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">facebook</i></a>
+  <?php echo excerpt(50); ?>
+  <footer>
+    <hr class="invisible">
+    <a href="<?php the_permalink(); ?>" class="button">Read More</a>
+    <a class="share-link" target="blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">twitter</i></a>
+    <a class="share-link" target="blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">facebook</i></a>
+  </footer>
 </article>

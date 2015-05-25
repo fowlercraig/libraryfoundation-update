@@ -103,7 +103,15 @@ function wc_checkout_add_ons_conditionally_show_donation_add_on() {
     		$( '#wc_checkout_add_ons' ).show();
 
     	}
-    },2000)
+    },2000);
+
+    setTimeout(function(){
+	    		if($('.fee').length == 0){
+
+	    		}else{
+	    			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'block');
+	    		}
+	    	},2000);
 
     ");
 
@@ -201,9 +209,9 @@ add_filter( 'wc_customer_order_csv_export_order_headers', 'lf_wc_customer_order_
 function lf_wc_csv_export_reorder_columns( $column_headers ) {
 	//echo '<pre>'.print_r($column_headers,true).'</pre><hr><hr>';
 	$new_column_headers = array();
-	
+
 	// Should the field set be limited.
-	if(isset($_POST['wc_customer_order_csv_export_limit_fields']) 
+	if(isset($_POST['wc_customer_order_csv_export_limit_fields'])
 		&& 	$_POST['wc_customer_order_csv_export_limit_fields'] == 0) {
 		$new_column_headers['order_number'] = $column_headers['order_number'];
 		$new_column_headers['order_date'] = $column_headers['order_date'];
@@ -213,8 +221,8 @@ function lf_wc_csv_export_reorder_columns( $column_headers ) {
 		$new_column_headers['item_total'] = $column_headers['item_total'];
 		$new_column_headers['stripe_fee'] = $column_headers['stripe_fee'];
 		$new_column_headers['net_revenue'] = $column_headers['net_revenue'];
-		$new_column_headers['item_quantity'] = $column_headers['item_quantity'];	
-		return $new_column_headers;	
+		$new_column_headers['item_quantity'] = $column_headers['item_quantity'];
+		return $new_column_headers;
 	}
 
 	$purge_array_billing = array(
@@ -320,7 +328,7 @@ function lf_wc_customer_order_csv_export_settings($settings, $tab_id) {
 					'default'  => '1',
 					'class'    => 'wc-enhanced-select chosen_select show_if_orders'
 				);
-				
+
 				$new_settings[] = array(
 					'id'       => 'wc_customer_order_csv_export_limit_fields',
 					'name'     => __( 'Export All Fields', WC_Customer_Order_CSV_Export::TEXT_DOMAIN ),

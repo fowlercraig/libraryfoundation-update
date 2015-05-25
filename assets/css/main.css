@@ -9088,6 +9088,12 @@ p.demo_store {
 .sidebar .xoxo li.popular-posts ul li img {
   max-width: 80px;
 }
+.sidebar .xoxo li.widget_recent_entries ul li img.wpp_featured_def,
+.sidebar .xoxo li.recent-posts-widget-with-thumbnails ul li img.wpp_featured_def,
+.sidebar .xoxo li.popularitypostswidget ul li img.wpp_featured_def,
+.sidebar .xoxo li.popular-posts ul li img.wpp_featured_def {
+  display: none;
+}
 .sidebar .xoxo li.widget_recent_entries ul a,
 .sidebar .xoxo li.recent-posts-widget-with-thumbnails ul a,
 .sidebar .xoxo li.popularitypostswidget ul a,
@@ -9701,6 +9707,27 @@ p.demo_store {
 .blog-item .title a {
   color: #59595b;
 }
+.blog-item a {
+  color: #008bbe;
+  border-bottom-color: #00b0f1;
+}
+.blog-item h1,
+.blog-item h2,
+.blog-item h3,
+.blog-item h4,
+.blog-item h5,
+.blog-item h6 {
+  font-family: 'Sentinel', serif;
+  text-rendering: optimizeLegibility;
+}
+.blog-item h1 a,
+.blog-item h2 a,
+.blog-item h3 a,
+.blog-item h4 a,
+.blog-item h5 a,
+.blog-item h6 a {
+  text-decoration: underline;
+}
 .blog-item .posted {
   margin-top: 0;
   font-family: 'Gotham';
@@ -9727,6 +9754,20 @@ p.demo_store {
 }
 .blog-item .thumbnail {
   display: block;
+}
+.blog-item footer .share-link {
+  font-size: 28px;
+  font-size: 1.75rem;
+  position: relative;
+  top: .325em;
+  color: #cccccc;
+}
+.blog-item footer .share-link:hover {
+  color: #e2438c;
+}
+.blog-item.single {
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 .pagination a {
   color: #e2438c;

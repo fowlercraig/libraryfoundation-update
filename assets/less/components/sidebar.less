@@ -26,7 +26,7 @@
       .widget-title {
         margin-top: 0;
         margin-bottom: 8px;
-        .sentinel();    
+        .sentinel();
       }
 
       &.widget_recent_entries, &.recent-posts-widget-with-thumbnails,
@@ -59,7 +59,10 @@
             }
 
             img {
-              max-width: 80px
+              max-width: 80px;
+              &.wpp_featured_def {
+                display: none;
+              }
             }
 
           }
@@ -236,9 +239,9 @@
 
   .related-book {
 
-    padding: 15px 20px;  
+    padding: 15px 20px;
     border-bottom: 1px solid @lightestGray;
-    
+
 
     strong,b {
       color: @black;

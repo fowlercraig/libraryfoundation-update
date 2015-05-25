@@ -25,7 +25,14 @@ function so_28348735_category_based_thank_you_message ( $order_id ){
 
   foreach( $order->get_items() as $item ) {
 
-    $hasContent = false;
+    $hasContent     = false;
+    $freeticket     = false;
+    $paidticket     = false;
+    $donation       = false;
+    $membership     = false;
+    $memGift        = false;
+    $youngLit       = false;
+    $giftMembership = false;
 
     if ( has_term( 'free-lfla-event', 'product_cat', $item['product_id'] ) ) {
       $freeticket = true; $hasContent = true;

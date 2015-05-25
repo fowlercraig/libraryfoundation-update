@@ -21,6 +21,13 @@
 
 <?php if ($membership === false) { ?>
 <script>
+
+  var memberstatus = $('td[data-title="Are you currently an LFLA member?" ]').text();
+
+  if( memberstatus == 'Yes' ){
+
+  } else {
+
   $(window).load(function(){
     setTimeout(function(){
       $.magnificPopup.open({
@@ -33,5 +40,7 @@
       }, 0);
     }, 4000);
   });
+
+  }
 </script>
 <?php } ?>
