@@ -2,6 +2,8 @@
 
 <?php if(get_field('media_title')):?>
 <h3><?php the_field('media_title');?></h3>
+<?php else: ?>
+<h3>Event Media</h3>
 <?php endif; ?>
 
 <?php if( have_rows('event_media_objects') ): while ( have_rows('event_media_objects') ) : the_row(); ?>
@@ -82,5 +84,5 @@
   </div>
 </div>
 <?php endif; ?>
-
+<hr class="invisible"/>
 </div>

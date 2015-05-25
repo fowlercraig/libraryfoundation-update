@@ -201,6 +201,21 @@ add_filter( 'wc_customer_order_csv_export_order_headers', 'lf_wc_customer_order_
 function lf_wc_csv_export_reorder_columns( $column_headers ) {
 	//echo '<pre>'.print_r($column_headers,true).'</pre><hr><hr>';
 	$new_column_headers = array();
+	
+	// Should the field set be limited.
+	if(isset($_POST['wc_customer_order_csv_export_limit_fields']) 
+		&& 	$_POST['wc_customer_order_csv_export_limit_fields'] == 0) {
+		$new_column_headers['order_number'] = $column_headers['order_number'];
+		$new_column_headers['order_date'] = $column_headers['order_date'];
+		$new_column_headers['billing_first_name'] = $column_headers['billing_first_name'];
+		$new_column_headers['billing_last_name'] = $column_headers['billing_last_name'];
+		$new_column_headers['item_name'] = $column_headers['item_name'];
+		$new_column_headers['item_total'] = $column_headers['item_total'];
+		$new_column_headers['stripe_fee'] = $column_headers['stripe_fee'];
+		$new_column_headers['net_revenue'] = $column_headers['net_revenue'];
+		$new_column_headers['item_quantity'] = $column_headers['item_quantity'];	
+		return $new_column_headers;	
+	}
 
 	$purge_array_billing = array(
 		'_billing_myfield4'		=> $column_headers['_billing_myfield4'],
@@ -300,6 +315,15 @@ function lf_wc_customer_order_csv_export_settings($settings, $tab_id) {
 					'id'       => 'wc_customer_order_csv_export_hide_free_orders',
 					'name'     => __( 'Exclude $0 Orders', WC_Customer_Order_CSV_Export::TEXT_DOMAIN ),
 					'desc_tip' => __( 'Should $0 Orders be excluded in the export.', WC_Customer_Order_CSV_Export::TEXT_DOMAIN ),
+					'type'     => 'select',
+					'options'  => array("1" => "Yes", "0" => "No"),
+					'default'  => '1',
+					'class'    => 'wc-enhanced-select chosen_select show_if_orders'
+				);
+				
+				$new_settings[] = array(
+					'id'       => 'wc_customer_order_csv_export_limit_fields',
+					'name'     => __( 'Export All Fields', WC_Customer_Order_CSV_Export::TEXT_DOMAIN ),
 					'type'     => 'select',
 					'options'  => array("1" => "Yes", "0" => "No"),
 					'default'  => '1',
