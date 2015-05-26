@@ -105,16 +105,35 @@ function wc_checkout_add_ons_conditionally_show_donation_add_on() {
     	}
     },2000);
 
-    setTimeout(function(){
-  		if($('.fee').length == 0){
-  			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'none');
-  		}else{
-  			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'block');
-  		}
-  	},2000);
+
+	$('#wc_checkout_add_ons_5').change(function() {
+      	console.log('value changed to ' + $(this).val());
+		var donationValue = $(this).val();
+		if(donationValue == 0) {
+			console.log('$0 donation selected');
+			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'none');
+			$('.woocommerce form #customer_details #billing_address_2_field, .woocommerce-page form #customer_details #billing_address_2_field, .woocommerce form.checkout #billing_address_2_field').css('display', 'none');
+			$('.woocommerce form #customer_details #billing_city_field,.woocommerce-page form #customer_details #billing_city_field,.woocommerce form.checkout #billing_city_field').css('display', 'none');
+			$('.woocommerce form #customer_details #billing_state_field,.woocommerce-page form #customer_details #billing_state_field,.woocommerce form.checkout #billing_state_field').css('display', 'none');
+			$('.woocommerce form #customer_details #billing_postcode_field,.woocommerce-page form #customer_details #billing_postcode_field,.woocommerce form.checkout #billing_postcode_field').css('display', 'none');
+			$('.woocommerce form #customer_details #billing_phone_field,.woocommerce-page form #customer_details #billing_phone_field,.woocommerce form.checkout #billing_phone_field').css('display', 'none');
+			$('.woocommerce form #customer_details #billing_myfield16_field,.woocommerce-page form #customer_details #billing_myfield16_field,.woocommerce form.checkout #billing_myfield16_field').css('display', 'none');
+		} else {
+			console.log(donationValue + ' donation selected');
+			$('.woocommerce form #customer_details #billing_address_1_field,.woocommerce-page form #customer_details #billing_address_1_field,.woocommerce form.checkout #billing_address_1_field').css('display', 'block');
+			$('.woocommerce form #customer_details #billing_address_2_field, .woocommerce-page form #customer_details #billing_address_2_field, .woocommerce form.checkout #billing_address_2_field').css('display', 'block');
+			$('.woocommerce form #customer_details #billing_city_field,.woocommerce-page form #customer_details #billing_city_field,.woocommerce form.checkout #billing_city_field').css('display', 'block');
+			$('.woocommerce form #customer_details #billing_state_field,.woocommerce-page form #customer_details #billing_state_field,.woocommerce form.checkout #billing_state_field').css('display', 'block');
+			$('.woocommerce form #customer_details #billing_postcode_field,.woocommerce-page form #customer_details #billing_postcode_field,.woocommerce form.checkout #billing_postcode_field').css('display', 'block');
+			$('.woocommerce form #customer_details #billing_phone_field,.woocommerce-page form #customer_details #billing_phone_field,.woocommerce form.checkout #billing_phone_field').css('display', 'block');
+			$('.woocommerce form #customer_details #billing_myfield16_field,.woocommerce-page form #customer_details #billing_myfield16_field,.woocommerce form.checkout #billing_myfield16_field').css('display', 'block');
+		}
+      });
 
 
     ");
+
+
 
 }
 add_action( 'wp_enqueue_scripts', 'wc_checkout_add_ons_conditionally_show_donation_add_on' );

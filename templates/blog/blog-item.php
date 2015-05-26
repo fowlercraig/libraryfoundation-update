@@ -9,7 +9,7 @@
   <footer>
     <hr class="invisible">
     <a href="<?php the_permalink(); ?>" class="button">Read More</a>
-    <a class="share-link" target="blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">twitter</i></a>
-    <a class="share-link" target="blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">facebook</i></a>
+    <a class="share-link" target="blank" href="https://twitter.com/home?status=<?php bloginfo( 'wpurl' ) ?><?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">twitter</i></a>
+    <a class="share-link" target="blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php bloginfo( 'wpurl' ) ?><?php the_permalink(); ?>"><i class="ss-social-circle ss-icon">facebook</i></a>
   </footer>
 </article>

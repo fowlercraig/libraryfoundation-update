@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'tribe_events_after_the_title' ); ?>
 
 	<!-- Notices -->
-	
+
 	<div class="row">
 		<div class="desktop-12">
 			<?php if ( have_posts() ) : ?>
@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<!-- Events Loop -->
 	<?php if ( have_posts() ) : ?>
-	
+
 		<?php do_action( 'tribe_events_before_loop' ); ?>
 		<?php tribe_get_template_part( 'list/loop' ) ?>
 		<?php do_action( 'tribe_events_after_loop' ); ?>
@@ -53,6 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     $old_args = array(
     'post_type'     => 'tribe_events',
     'posts_per_page'=> -1,
+    'order'          => 'DESC',
     'tax_query'     => array(
       array(
         'taxonomy' => 'tribe_events_cat',
@@ -60,13 +61,21 @@ if ( ! defined( 'ABSPATH' ) ) {
         'terms'    => $cat,
       ),
     ),
-    'eventDisplay' => 'past',
+    'eventDisplay' => 'all',
+    'meta_query'   => array(
+        array(
+          'key'      => '_EventStartDate',
+          'value'    => date('Y-m-d'),
+          'compare'  => '<'
+        )
+      ),
+    'eventDisplay' => 'all',
     );
 
-    $old_temp = $old_wp_query; 
-    $old_wp_query = null; 
-    $old_wp_query = new WP_Query(); 
-    $old_wp_query->query($old_args); 
+    $old_temp = $old_wp_query;
+    $old_wp_query = null;
+    $old_wp_query = new WP_Query();
+    $old_wp_query->query($old_args);
     ?>
 
     <header class="past-events">
@@ -80,7 +89,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="tribe-events-list">
 
     <?php $counter = 1; while ($old_wp_query->have_posts()) : $old_wp_query->the_post();?>
-    <?php 
+    <?php
 
       if ( has_post_thumbnail()) {
 
@@ -95,7 +104,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       $terms = wp_get_post_terms(get_the_ID(), 'tribe_events_cat');
       $count = count($terms);
 
-      // Here's where we'll get the slug for the current event category. 
+      // Here's where we'll get the slug for the current event category.
       // It only displays the first category slug -- but there shouldn't be a reason for more than one cat, right?
 
       if ( $count > 0 ){
@@ -107,8 +116,8 @@ if ( ! defined( 'ABSPATH' ) ) {
       }
 
       // Custom Category Header
-      // Let's make sure to reuse this in other parts of the site, where applicable. 
-      // Probably the actual Event Category page. 
+      // Let's make sure to reuse this in other parts of the site, where applicable.
+      // Probably the actual Event Category page.
 
       $event_bg = '/assets/img/headers/default-'.$eventCat.'.jpg';
 
@@ -127,7 +136,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     </div>
 
-	
+
 	<?php endif; ?>
 
 	<!-- List Footer -->

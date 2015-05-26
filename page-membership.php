@@ -8,14 +8,4 @@
 
 ?>
 
-<?php if (isset($_GET['calendar'])): ?>
-  <script>
-    $(function(){
-      $('html, body').animate({
-        scrollTop: $("#tab-1").offset().top - 180
-      }, 400);
-    });
-  </script>
-<?php endif; ?>
-
 <?php get_footer(); ?>
