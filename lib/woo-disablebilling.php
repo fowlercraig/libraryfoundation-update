@@ -287,7 +287,7 @@ if ( function_exists( 'tribe_is_event') ) {
       return $value;
     }
 
-    $phone_number = get_post_meta( $item['order_id'], 'currently_member', true );
+    $phone_number = get_post_meta( $item['order_id'], 'myfield2', true );
 
     // Remove the <small></small> tags from this to have the phone number text display at full size.
     if ( ! empty( $phone_number ) ) {
@@ -314,7 +314,7 @@ function populate_my_custom_attendee_column( $existing, $item, $column, $order_i
 
     if ( 'custom_id' !== $column ) return $existing;
 
-    //$member = get_post_meta( $item['order_id'], 'currently_member', true );
+    //$member = get_post_meta( $item['order_id'], 'myfield2', true );
     //$phone_number = get_post_meta( $item['order_id'], 'order_warning', true );
     //$product_cats = wp_get_post_terms( $item['order_id'], 'product_cat' );
 
