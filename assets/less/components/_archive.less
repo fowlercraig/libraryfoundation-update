@@ -95,10 +95,21 @@
       .event-gallery {
         margin-top: 0;
         figure {
+
           display: none;
+
           &.item_1 {
             display: block;
           }
+
+          &.show {
+            display: block;
+          }
+
+          &.hidden {
+            display: none;
+          }
+
         }
       }
 
@@ -158,6 +169,14 @@
 
         &.item_1 {
           display: block;
+        }
+
+        &.show {
+          display: block;
+        }
+
+        &.hidden {
+          display: none;
         }
 
       }

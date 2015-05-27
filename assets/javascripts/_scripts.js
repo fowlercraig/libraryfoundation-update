@@ -1,3 +1,5 @@
+
+
 //SmartAjax_load('/assets/javascripts/', function(){
   /* Pre-Define HTML5 Elements in IE */
   (function() {

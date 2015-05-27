@@ -11402,6 +11402,14 @@ animated buttons - animate the text inside prev and next buttons
 #related-media .item .thumb .event-gallery figure.item_1 {
   display: block;
 }
+#archive--wrapper .item .thumb .event-gallery figure.show,
+#related-media .item .thumb .event-gallery figure.show {
+  display: block;
+}
+#archive--wrapper .item .thumb .event-gallery figure.hidden,
+#related-media .item .thumb .event-gallery figure.hidden {
+  display: none;
+}
 #archive--wrapper .item .thumb .info,
 #related-media .item .thumb .info {
   position: absolute;
@@ -11450,6 +11458,14 @@ animated buttons - animate the text inside prev and next buttons
 #archive--wrapper .item.gallery figure.item_1,
 #related-media .item.gallery figure.item_1 {
   display: block;
+}
+#archive--wrapper .item.gallery figure.show,
+#related-media .item.gallery figure.show {
+  display: block;
+}
+#archive--wrapper .item.gallery figure.hidden,
+#related-media .item.gallery figure.hidden {
+  display: none;
 }
 #archive--wrapper .item.gallery,
 #related-media .item.gallery {
@@ -13698,6 +13714,12 @@ button.btn-success.btn-default {
 }
 #archive-grid .gallery-item .event-gallery figure.item_1 {
   display: block;
+}
+#archive-grid .gallery-item .event-gallery figure.show {
+  display: block;
+}
+#archive-grid .gallery-item .event-gallery figure.hidden {
+  display: none;
 }
 #archive-grid .gallery-item img {
   -webkit-transition: 300ms ease;

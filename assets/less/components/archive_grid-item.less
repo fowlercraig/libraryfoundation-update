@@ -94,7 +94,7 @@
       height: auto;
 
     }
-    
+
   }
 
   .gallery-item {
@@ -109,6 +109,12 @@
         display: none;
         &.item_1 {
           display: block;
+        }
+        &.show {
+          display: block;
+        }
+        &.hidden {
+          display: none;
         }
       }
     }
@@ -140,7 +146,7 @@
     background: @black;
 
     &.non-gallery {
-      .bottom-overlay();  
+      .bottom-overlay();
     }
 
     .icon {
@@ -347,7 +353,7 @@
         padding: 25px 0 0;
 
         p {
-          
+
           color: inherit;
           line-height: 1.3;
           margin-bottom: 0;

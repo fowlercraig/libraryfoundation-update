@@ -37,16 +37,20 @@
       $link   = $video_url;
       $class  = 'play popup-video';
 
-    } elseif (has_post_format('audio')){
+    }
+
+    if (has_post_format('audio')){
 
       $format = 'podcast';
       $link   =  get_field('archive_podcast');
       $class  = '';
 
-    } elseif (has_post_format('gallery')){
+    }
+
+    if (has_post_format('gallery')){
 
       $format = 'gallery';
-      $link   = 'video';
+      $link   = '#';
       $class  = '';
 
       $images          = get_field('archive_gallery');
