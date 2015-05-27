@@ -28,13 +28,3 @@ if ( ! defined( 'ABSPATH' ) ) {
   //include locate_template('templates/calendar-sponsors.php');
 
 ?>
-
-<?php if (isset($_GET['calendar'])): ?>
-  <script>
-    $(function(){
-      $('html, body').animate({
-        scrollTop: $("#tab-1").offset().top - 180
-      }, 400);
-    });
-  </script>
-<?php endif; ?>
