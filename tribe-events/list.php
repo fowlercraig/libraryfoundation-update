@@ -29,8 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-thingsworking
-
 <?php if (isset($_GET['calendar'])): ?>
   <script>
     $(function(){
