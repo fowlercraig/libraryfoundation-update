@@ -143,18 +143,7 @@
 
         ?>
 
-        <?php $images = get_field('archive_gallery'); ?>
-        <?php if( $images ): ?>
-        <div class="event-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-        <?php $counter = 1; foreach( $images as $image ): ?>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="item_<?php echo $counter; ?>">
-        <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
-        <img src="<?php echo $image['sizes']['footer-module-image']; ?>" class="img-responsive" itemprop="thumbnail" alt="" />
-        </a>
-        </figure>
-        <?php  $counter++; endforeach; ?>
-        </div>
-        <?php endif; ?>
+        <?php include locate_template('templates/event-gallery.php' );?>
 
         <?php
 

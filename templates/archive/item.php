@@ -1,5 +1,5 @@
 <?php
-  
+
   $thumb_id         = get_post_thumbnail_id();
   $thumb_url_array  = wp_get_attachment_image_src($thumb_id, 'large', true);
   $video            = get_field('archive:_video'); //Embed Code
@@ -14,7 +14,7 @@
   $guests           = $speakers;
   $action           = '';
   $metainfo         = get_the_tag_list('',', ','');
-  $formatTitle      = 
+  $formatTitle      =
   // Random Colors
   $input            = array("pink","blue","green","orange");
   $rand_keys        = array_rand($input, 2);
@@ -40,8 +40,8 @@
   } elseif ( has_post_format( 'gallery' )) {
 
     $format         = 'photo';
-    $images         = get_field('archive_gallery'); 
-    $image_1        = $images[0]; 
+    $images         = get_field('archive_gallery');
+    $image_1        = $images[0];
     $thumb_url      = $image_1[url];
     $formatTitle    = 'gallery';
 
@@ -90,18 +90,8 @@
     <span class="cat"><?php echo $metainfo; ?></span>
   </div>
 
-  <?php $images = get_field('archive_gallery'); ?>
-  <?php if( $images ): ?>
-  <div class="event-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    <?php $counter = 1; foreach( $images as $image ): ?>
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="item_<?php echo $counter; ?>">
-      <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
-        <img src="<?php echo $image['sizes']['archive-small']; ?>" class="img-responsive" itemprop="thumbnail" alt="" />
-      </a>
-    </figure>
-    <?php  $counter++; endforeach; ?>
-  </div>
-  <?php endif; ?>
+  <?php include locate_template('templates/event-gallery.php' );?>
+
 </div>
 
 <?php } else { ?>
@@ -135,7 +125,7 @@
     <?php endif; ?>
     <span class="cat"><?php echo $metainfo; ?></span>
   </div>
-  
+
   <?php echo $action; ?>
 
   <?php if ( has_post_format( 'quote' )) { } else { ?>

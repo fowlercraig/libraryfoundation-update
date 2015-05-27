@@ -1,3 +1,5 @@
+<?php if( have_rows('event_media_objects') ): ?>
+
 <div id="related-media" class="sidebar">
 
 <?php if(get_field('media_title')):?>
@@ -6,7 +8,7 @@
 <h3>Event Media</h3>
 <?php endif; ?>
 
-<?php if( have_rows('event_media_objects') ): while ( have_rows('event_media_objects') ) : the_row(); ?>
+<?php while ( have_rows('event_media_objects') ) : the_row(); ?>
 <?php $post_objects = get_sub_field('event_media'); if( $post_objects ): ?>
 <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 <?php setup_postdata($post); ?>
@@ -16,15 +18,26 @@
   <h3 class="title"><?php the_title(); ?></h3>
   <span class="action"><i class="ss-icon ss-gizmo">Plus</i></span>
   <div class="item event-gallery">
-    <?php $counter = 1; foreach( $images as $image ): ?>
-    <figure itemscope itemtype="http://schema.org/ImageObject" class="figure figure_<?php echo $counter; ?>">
+
+    <?php $image  = $images[0]; ?>
+
+    <?php if( $image ) : ?>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="show item_<?php echo $counter; ?>">
     <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
-    <img src="<?php echo $image['sizes']['large']; ?>" class="img-responsive" alt="<?php echo $image['alt']; ?>" itemprop="thumbnail"/>
+    <img class="img-responsive" src="<?php echo $image['sizes']['footer-module-image']; ?>" alt="<?php echo $image['alt']; ?>" />
     </a>
-    <figcaption itemprop="caption description"><?php echo $image['caption']; ?></figcaption>
     </figure>
-    <?php $counter++; // add one per row ?>
-    <?php endforeach; ?>
+    <?php endif; ?>
+
+    <?php $counter = 1; $i = 0; foreach( $images as $image ): $i++; if ($i != 1): ?>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="hidden item_<?php echo $counter; ?>">
+    <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
+    <img class="img-responsive" src="" alt="<?php echo $image['alt']; ?>" />
+    </a>
+    </figure>
+
+    <?php  $counter++; endif; endforeach; ?>
+
   </div>
 </div>
 <?php endif; ?>
@@ -62,7 +75,7 @@
 <?php endforeach; ?>
 <?php wp_reset_postdata(); ?>
 <?php endif; wp_reset_postdata();?>
-<?php endwhile; endif;?>
+<?php endwhile; ?>
 
 <?php // Here's the custom gallery ?>
 
@@ -86,3 +99,5 @@
 <?php endif; ?>
 <hr class="invisible"/>
 </div>
+
+<?php endif;?>
