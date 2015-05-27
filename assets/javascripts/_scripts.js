@@ -13,6 +13,12 @@
 
   function thangs() {
 
+    $( ".item.format-gallery .title a" ).click(function( event ) {
+      event.preventDefault();
+      //alert('boom');
+      $(this).parent().parent().parent().parent().find('figure.show a').click();
+    });
+
     $.shifter({
       maxWidth: '960px'
     });
@@ -192,10 +198,10 @@
     }
     // Parse URL and open gallery if it contains #&pid=3&gid=1
     var hashData = photoswipeParseHash();
-    if (hashData.pid > 0 && hashData.gid > 0) {
-      openPhotoSwipe(hashData.pid - 1, galleryElements[hashData.gid - 1],
-        true);
+    if(hashData.pid && hashData.gid) {
+        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
     }
+
   };
   // execute above function
   initPhotoSwipeFromDOM('.event-gallery');

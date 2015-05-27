@@ -110,7 +110,9 @@
 
         <?php $counter = 1; $i = 0; foreach( $images as $image ): $i++; if ($i != 1): ?>
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="hidden item_<?php echo $counter; ?>">
-        <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>"></a>
+        <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
+          <img class="img-responsive" src="" alt="<?php echo $image['alt']; ?>" />
+        </a>
         </figure>
 
         <?php  $counter++; endif; endforeach; ?>
