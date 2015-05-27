@@ -12,12 +12,15 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
+  tribe_events_the_header_attributes();
 } ?>
 
 <?php
 
-  include locate_template('templates/calendar-header.php');
+
+
   do_action( 'tribe_events_before_template' );
+  include locate_template('templates/calendar-header.php');
   get_template_part('templates/calendar', 'content');
   get_template_part('templates/flex', 'content');
   tribe_get_template_part( 'modules/bar' );
