@@ -5569,7 +5569,7 @@
 		},
 	"\/assets\/bower_components\/smoothstate\/jquery.smoothState.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/bower_components\/smoothstate\/jquery.smoothState.js",
 		"outputAbbreviatedPath": "\/assets\/bower_components\/smoothstate\/min\/jquery.smoothState-min.js",

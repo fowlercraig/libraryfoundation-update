@@ -817,36 +817,36 @@ $(document)
 .ready(function() {
   thangs();
 });;
-(function($) {
-  'use strict';
-  var $body = $('html, body'),
-  content = $('body')
-  .smoothState({
-    prefetch: true,
-    pageCacheSize: 4,
-    onStart: {
-      duration: 250,
-      render: function(url, $container) {
-        content.toggleAnimationClass('is-exiting');
-        thangs();
-      }
-    },
-    onEnd: {
-        duration: 0, // Duration of the animations, if any.
-        render: function(url, $container, $content) {
-          $body.css('cursor', 'auto');
-          $body.find('a')
-          .css('cursor', 'auto');
-          $container.html($content);
-          thangs();
-          $body.animate({
-            scrollTop: 0
-          });
-        }
-      },
-    })
-  .data('smoothState');
-})(jQuery);
+//(function($) {
+//  'use strict';
+//  var $body = $('html, body'),
+//  content = $('body')
+//  .smoothState({
+//    prefetch: true,
+//    pageCacheSize: 4,
+//    onStart: {
+//      duration: 250,
+//      render: function(url, $container) {
+//        content.toggleAnimationClass('is-exiting');
+//        thangs();
+//      }
+//    },
+//    onEnd: {
+//        duration: 0, // Duration of the animations, if any.
+//        render: function(url, $container, $content) {
+//          $body.css('cursor', 'auto');
+//          $body.find('a')
+//          .css('cursor', 'auto');
+//          $container.html($content);
+//          thangs();
+//          $body.animate({
+//            scrollTop: 0
+//          });
+//        }
+//      },
+//    })
+//  .data('smoothState');
+//})(jQuery);
 // $( ".single_add_to_cart_button" ).each(function(){
 //     var product_id = jQuery(this).attr('rel');
 //     var el = jQuery(this);

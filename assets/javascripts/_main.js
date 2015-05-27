@@ -32,7 +32,6 @@
 // @codekit-prepend "../bower_components/infinite-scroll/jquery.infinitescroll.js";
 // @codekit-prepend "../bower_components/sharebutton/build/share.js";
 // @codekit-prepend "../bower_components/swiper/dist/js/swiper.jquery.min.js";
-// @codekit-prepend "../bower_components/smoothstate/jquery.smoothState.js";
 // @codekit-prepend "modules/accordion.js";
 
 // My Shit
