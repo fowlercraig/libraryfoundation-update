@@ -13,7 +13,7 @@
       simulateTouch: false,
       cube: {
           shadow: false,
-          slideShadows: true,
+          slideShadows: false,
           shadowOffset: 20,
           shadowScale: 0.94
       }
