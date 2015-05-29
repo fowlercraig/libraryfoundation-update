@@ -18,14 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<!-- List Title -->
 	<?php do_action( 'tribe_events_before_the_title' ); ?>
-	<!--<div class="header">
-		<div class="row">
-			<div class="desktop-8">
-				<span class="tribe-events-page-title"><?php echo tribe_get_events_title() ?></span>
-			</div>
-		</div>
-	</div>-->
-	<?php do_action( 'tribe_events_after_the_title' ); ?>
+  <h2 class="tribe-events-page-title" style="display:none"><?php echo tribe_get_events_title() ?></h2>
+  <?php do_action( 'tribe_events_after_the_title' ); ?>
 
 	<!-- Notices -->
 
@@ -37,11 +31,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</div>
 
-  <div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?> style="display:none">
+  <?php do_action( 'tribe_events_before_header' ); ?>
+  <div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?> style="display:none;">
+
+    <!-- Header Navigation -->
     <?php do_action( 'tribe_events_before_header_nav' ); ?>
     <?php tribe_get_template_part( 'list/nav', 'header' ); ?>
     <?php do_action( 'tribe_events_after_header_nav' ); ?>
+
   </div>
+  <!-- #tribe-events-header -->
+  <?php do_action( 'tribe_events_after_header' ); ?>
 
 	<!-- Events Loop -->
 	<?php if ( have_posts() ) : ?>
