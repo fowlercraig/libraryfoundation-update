@@ -1,4 +1,5 @@
 <?php if( have_rows('password_protected_2', 'options') ): ?>
+
 <script>
 <?php
   while ( have_rows('password_protected_2', 'options') ) : the_row();
@@ -14,10 +15,12 @@
 
 $(document).ready(function(){
 
+// Ticket-ID <?php echo $ticket_name; ?>
+
 <?php if( have_rows('related_ticket_groups') ):?>
 $(".ticket_<?php echo $ticket_name; ?> .tickets_name").append('<a href="#<?php echo $ticket_name; ?>_box" class="alert">Members Only: Click to unlock</a>');
 <?php else: ?>
-$(".ticket_<?php echo $ticket_name; ?> .tickets_name").append('<a href="#" class="noted">Members Only: Click to unlock</a>');
+$(".ticket_<?php echo $ticket_name; ?> .tickets_name").append('<a href="#" id="ticket_<?php echo $ticket_name; ?>_btn" class="noted">Members Only: Click to unlock</a>');
 <?php endif; ?>
 $(".ticket_<?php echo $ticket_name; ?> .quantity input").prop('disabled', true);
 
@@ -68,7 +71,13 @@ $(window).keydown(function(event){
 
 <?php if( !have_rows('related_ticket_groups') ):?>
 
-  $(".ticket .noted").click(function(){
+  var ticketid = '#<?php echo $ticket_name; ?>_password';
+
+  console.log(ticketid);
+
+  // #ticket_aneveningwithjudyblumestudentadmission
+
+  $(".ticket #ticket_<?php echo $ticket_name; ?>_btn.noted").click(function(){
 
     $('#password-entry').addClass('active').animate({
       height: '78px',
@@ -76,7 +85,11 @@ $(window).keydown(function(event){
       paddingBottom: 20
     },300);
 
-    $("#<?php echo $ticket_name; ?>_password").show();
+    $('.ticket').css({
+      pointerEvents: 'none'
+    });
+
+    $(ticketid).show();
 
     // var ticketid = $(this).parent().parent().attr('id').replace('ticket_','');
     // var ticketbox = '#' + ticketid + '_box form';
@@ -94,6 +107,10 @@ $(window).keydown(function(event){
       paddingTop: 0,
       paddingBottom: 0
     },300);
+    $("#<?php echo $ticket_name; ?>_password").hide();
+    $('.ticket').css({
+      pointerEvents: 'auto'
+    });
   });
 
   $('#password-entry .activate').click(function(){
@@ -107,29 +124,33 @@ $(window).keydown(function(event){
       paddingBottom: 0
     },300);
     },300);
+    $('.ticket').css({
+      pointerEvents: 'auto'
+    });
 
   });
+
+});
 
 <?php endif; ?>
 
 <?php endwhile; ?>
 
 
-  $(document).ready(function(){
-    $('.alert').magnificPopup({
-      type: 'inline',
-      preloader: false,
-      //closeBtnInside: false,
-      mainClass: 'mfp-fade',
-      callbacks: {
-        open: function() {
-          $('body').addClass('.members-only-ignited');
-        },
-        close: function() {
-          $('body').removeClass('.members-only-ignited');
-        },
-      }
-    });
+$(document).ready(function(){
+  $('.alert').magnificPopup({
+    type: 'inline',
+    preloader: false,
+    //closeBtnInside: false,
+    mainClass: 'mfp-fade',
+    callbacks: {
+      open: function() {
+        $('body').addClass('.members-only-ignited');
+      },
+      close: function() {
+        $('body').removeClass('.members-only-ignited');
+      },
+    }
   });
 });
 

@@ -9,8 +9,8 @@ ob_start();
 <form action="<?php echo esc_url( add_query_arg( 'wootickets_process', 1, $woocommerce->cart->get_cart_url() ) ); ?>" class="cart" method="post" enctype='multipart/form-data'>
 	<h2 class="tribe-events-tickets-title"><?php _e( 'Tickets', 'tribe-wootickets' ) ?></h2>
 
-	
-	
+
+
 	<?php if( have_rows('related_ticket_groups') ):?>
 	<div id="things">
 	<?php include locate_template('templates/event-tabs.php'); ?>
@@ -57,13 +57,15 @@ ob_start();
 				// convert the string to all lowercase
 				$zname_clean = strtolower($zname_clean);
 
+				$tickettime = $zname_clean;
+
 				if( have_rows('related_ticket_groups') ) {
-					echo "<div id='ticket_$zname_clean' class='row ticket ticket_$zname_clean'>";
-					
+					echo "<div id='ticket_$tickettime' class='row boom ticket ticket_$zname_clean'>";
+
 				} else {
-					echo "<div id='ticket_$zname_clean' class='row ticket ticket_$zname_clean'>";
+					echo "<div id='ticket_$tickettime' class='row boom ticket ticket_$zname_clean'>";
 				}
-	
+
 				echo "<div class='desktop-2 woocommerce padded'>";
 
 				if ( $product->is_in_stock() ) {
@@ -110,7 +112,7 @@ ob_start();
 			<div>
 				<div colspan="4" class='woocommerce add-to-cart'>
 
-					
+
 
 					<button type="submit"
 					        class="button alt"><?php esc_html_e( 'RSVP for this Event', 'tribe-wootickets' );?></button>
