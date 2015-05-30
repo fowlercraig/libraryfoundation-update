@@ -39,8 +39,11 @@ $("#alt_login_<?php echo $ticket_name; ?>").click(function(){
   if( $("#alt_loginpassword_<?php echo $ticket_name; ?>").val()=="<?php the_sub_field('password'); ?>") {
     //$(".ticket_<?php echo $ticket_name; ?> .quantity input").prop('disabled', false);
     //$.magnificPopup.close();
-    $(".quantity input").stepper("enable");
-    $(".noted").addClass('active').text("Awesome, you're in.");
+
+    //ticket_aneveningwithjudyblumestudentadmission
+
+    $("#ticket_<?php echo $ticket_name; ?> .quantity input").stepper("enable");
+    $("#ticket_<?php echo $ticket_name; ?> .noted").addClass('active').text("Awesome, you're in.");
     setTimeout(function(){
       $("#password-entry").animate({
       height: 0,
@@ -48,6 +51,13 @@ $("#alt_login_<?php echo $ticket_name; ?>").click(function(){
       paddingBottom: 0
     },300);
     },300);
+
+    $('.ticket').css({
+      pointerEvents: 'auto'
+    });
+
+    $('.password-entry').hide();
+
   }
   else {
 
@@ -55,19 +65,41 @@ $("#alt_login_<?php echo $ticket_name; ?>").click(function(){
   }
 });
 
-$(window).keydown(function(event){
-  if(event.keyCode == 13) {
-    event.preventDefault();
-  if( $("#loginpassword_<?php echo $ticket_name; ?>").val()=="<?php the_sub_field('password'); ?>") {
-    $(".ticket_<?php echo $ticket_name; ?> .quantity input").prop('disabled', false);
-    $.magnificPopup.close();
-  }
-  else {
-    alert("Please try again");
-  }
+$(".password-form").submit(function(e){
     return false;
-  }
 });
+
+// $(".password-form").submit(function(e){
+//
+//   if(event.keyCode == 13) {
+//
+//     event.preventDefault();
+//
+//     if( $("#loginpassword_<?php echo $ticket_name; ?>").val() == "<?php the_sub_field('password'); ?>") {
+//
+//       $(".ticket_<?php echo $ticket_name; ?> .quantity input").prop('disabled', false);
+//       //$.magnificPopup.close();
+//
+//       var password = $("#alt_loginpassword_<?php echo $ticket_name; ?>").val();
+//       console.log(password);
+//
+//       alert("Sweet");
+//
+//     } else {
+//
+//        alert("Please try again");
+//       // $.magnificPopup.close();
+//
+//       var password = $("#alt_loginpassword_<?php echo $ticket_name; ?>").val();
+//       console.log(password);
+//
+//     }
+//
+//     return false;
+//
+//   }
+//
+// });
 
 <?php if( !have_rows('related_ticket_groups') ):?>
 
