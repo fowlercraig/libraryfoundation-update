@@ -163,41 +163,6 @@ $ul_wp_query->query($ul_args);
 </div>
 
 
-<script>
-$(document).ready(function(){
-
-  if( $('#tab-2').html().match(/^\s*$/)) {
-    if ( $('body').hasClass('page-the-council')) {
-      $('#tab-2').prepend('<div class="row"><div class="desktop-12 tablet-6 mobile-3"><h2 class="no-events">Visit our <a target="blank" href="https://www.flickr.com/photos/89625359@N08/sets/">photo gallery</a> to view past events.</h2></div></div>');
-    } else {
-      $('#tab-2').prepend('<div class="row"><div class="desktop-12 tablet-6 mobile-3"><h2 class="no-events">Sorry, there are no past events.</h2></div></div>');
-    }
-  }
-
-// on click Sign In Button checks that username =='admin' and password == 'password'
-$("#login").click(function(){
-  if( $("#loginpassword").val()=='password') {
-    $("#first").hide();
-    $("#second").show();
-  }
-  else {
-    alert("Please try again");
-  }
-
-
-
-// $("#logout").click(function() {
-// $("form")[0].reset();
-// $("#first").show();
-// $("#second").hide();
-});
-
-});
-
-
-
-</script>
-
 <?php if (isset($_GET['calendar'])): ?>
   <script>
     $(function(){
