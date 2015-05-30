@@ -154,48 +154,7 @@ $ul_wp_query->query($ul_args);
 </div>
 
 
-<div class="tabber-tab tribe-events-list" id="tab-6">
 
-
-  <div id="first" class="password-protected">
-    <div class="row">
-      <div class="desktop-4 tablet-4 mobile-3 centered">
-        <form action="" method="post" class="row">
-          <input type="password" id="loginpassword" placeholder="Password" class="desktop-9 tablet-5 mobile-3" />
-          <input type="submit" id="login" value="Unlock" class="desktop-3 tablet-1 mobile-3" />
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div id="second" style="display:none">
-    <?php if ( have_posts() ) : ?>
-    <?php $counter = 1; while ($ul_wp_query->have_posts()) : $ul_wp_query->the_post();?>
-
-    <?php
-    $thumb_id = get_post_thumbnail_id();
-    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'header-bg', true);
-    $thumb_url = $thumb_url_array[0];
-    $event_bg  = $thumb_url;
-    if ( has_post_thumbnail() ) {
-      $bg = 'bg';
-    } else {
-      $bg = 'bg noimage';
-    }
-    ?>
-
-    <div id="post-<?php the_ID() ?>" class="<?php tribe_events_event_classes() ?>">
-      <div class="row">
-        <?php tribe_get_template_part( 'list/single', 'event' ) ?>
-      </div>
-      <div class="<?php echo $bg; ?>" style="background-image:url(<?php echo $event_bg; ?>);"></div>
-    </div>
-    <?php $counter++; endwhile; ?>
-    <?php $ul_wp_query = null; $ul_wp_query = $ul_temp; wp_reset_postdata(); ?>
-  <?php else: ?>
-  <h2 class="no-events">Sorry, no member events.</h2>
-<?php endif; ?>
-</div>
 
 
 </div>
