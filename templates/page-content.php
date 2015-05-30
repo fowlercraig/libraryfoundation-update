@@ -1,11 +1,11 @@
-<?php 
+<?php
 
   // Dynamically Grab the page width depending on template.
 
   $includeSidebar = get_field('include_sidebar');
 
   if ( get_field('include_aside')) {
-  
+
     $pageWidth = 'sizer-item desktop-7 tablet-4 mobile-3';
 
   } else {
@@ -24,7 +24,7 @@
   if (is_page('about')) {
 
     $pageWidth = 'sizer-item desktop-10 tablet-6 mobile-3 centered';
-    
+
   }
 
 ?>
