@@ -18,7 +18,7 @@
   <div class="wrapper">
     <h3>Become a Member</h3>
     <p>
-      Library Foundation membership gives you special access to public programs,
+      Library Foundation Membership gives you special access to public programs,
       opening parties, and puts you in the mix of L.A.'s vibrant literary and
       culture scene.
     </p>
