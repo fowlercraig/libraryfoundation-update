@@ -12784,23 +12784,27 @@ table.cart .product-subtotal {
   font-size: 18px;
 }
 .tribe-events-list .type-tribe_events:hover,
-.tribe-events-list .type-tribe_events:first-child {
+.tribe-events-list .type-tribe_events:first-child,
+.tribe-events-list .type-tribe_events#post-1 {
   background: #000;
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
 }
 @media screen and (min-width: 980px) {
   .tribe-events-list .type-tribe_events:hover,
-  .tribe-events-list .type-tribe_events:first-child {
+  .tribe-events-list .type-tribe_events:first-child,
+  .tribe-events-list .type-tribe_events#post-1 {
     padding: 4.16666667% 0;
   }
 }
 .tribe-events-list .type-tribe_events:hover .title a,
-.tribe-events-list .type-tribe_events:first-child .title a {
+.tribe-events-list .type-tribe_events:first-child .title a,
+.tribe-events-list .type-tribe_events#post-1 .title a {
   color: #ffffff;
 }
 .tribe-events-list .type-tribe_events:hover .button,
-.tribe-events-list .type-tribe_events:first-child .button {
+.tribe-events-list .type-tribe_events:first-child .button,
+.tribe-events-list .type-tribe_events#post-1 .button {
   border-radius: 0;
   border-color: #ffffff;
   border-width: 2px;
@@ -12814,26 +12818,35 @@ table.cart .product-subtotal {
   color: #ffffff;
 }
 .tribe-events-list .type-tribe_events:hover .button:hover,
-.tribe-events-list .type-tribe_events:first-child .button:hover {
+.tribe-events-list .type-tribe_events:first-child .button:hover,
+.tribe-events-list .type-tribe_events#post-1 .button:hover {
   background: #ffffff;
   color: #333333;
 }
-.tribe-events-list .type-tribe_events.tribe-events-first {
+.tribe-events-list .type-tribe_events.tribe-events-first,
+.tribe-events-list .type-tribe_events:first-child,
+.tribe-events-list .type-tribe_events#post-1 {
   padding: 5.20833333% 0 !important;
 }
 @media screen and (min-width: 320px) {
-  .tribe-events-list .type-tribe_events.tribe-events-first .title {
+  .tribe-events-list .type-tribe_events.tribe-events-first .title,
+  .tribe-events-list .type-tribe_events:first-child .title,
+  .tribe-events-list .type-tribe_events#post-1 .title {
     font-size: 20px;
     font-size: 1.25rem;
   }
 }
 @media screen and (min-width: 740px) {
-  .tribe-events-list .type-tribe_events.tribe-events-first .title {
+  .tribe-events-list .type-tribe_events.tribe-events-first .title,
+  .tribe-events-list .type-tribe_events:first-child .title,
+  .tribe-events-list .type-tribe_events#post-1 .title {
     font-size: 42px;
     font-size: 2.625rem;
   }
 }
-.tribe-events-list .type-tribe_events.tribe-events-first:hover {
+.tribe-events-list .type-tribe_events.tribe-events-first:hover,
+.tribe-events-list .type-tribe_events:first-child:hover,
+.tribe-events-list .type-tribe_events#post-1:hover {
   padding: 5.20833333% 0 !important;
 }
 .tribe-events-list .type-tribe_events.tribe-events-last {
@@ -12864,11 +12877,13 @@ table.cart .product-subtotal {
   filter: blur(5px);
 }
 .tribe-events-list .type-tribe_events:hover .bg,
-.tribe-events-list .type-tribe_events:first-child .bg {
+.tribe-events-list .type-tribe_events:first-child .bg,
+.tribe-events-list .type-tribe_events#post-1 .bg {
   opacity: .5;
 }
 .tribe-events-list .type-tribe_events:hover .bg.noimage,
-.tribe-events-list .type-tribe_events:first-child .bg.noimage {
+.tribe-events-list .type-tribe_events:first-child .bg.noimage,
+.tribe-events-list .type-tribe_events#post-1 .bg.noimage {
   opacity: 1;
 }
 .past-events .title {

@@ -38,38 +38,6 @@ $wp_query = null;
 $wp_query = new WP_Query();
 $wp_query->query($args);
 
-$old_args = array(
-  'post_type' => 'tribe_events',
-  'posts_per_page'=> -1,
-  'order'          => 'DESC',
- 'tax_query' => array(
-   array(
-     'taxonomy' => 'tribe_events_cat',
-     'field'    => 'slug',
-     'terms'    => $eventCat,
-     ),
-   array(
-     'taxonomy' => 'tribe_events_cat',
-     'field'    => 'slug',
-     'terms'    => array('hidden'),
-     'operator' => 'NOT IN'
-     ),
-   ),
- 'meta_query'   => array(
-       array(
-         'key'      => '_EventStartDate',
-         'value'    => date('Y-m-d'),
-         'compare'  => '<'
-       )
-     ),
- 'eventDisplay' => 'all',
-  );
-
-$old_temp = $old_wp_query;
-$old_wp_query = null;
-$old_wp_query = new WP_Query();
-$old_wp_query->query($old_args);
-
 $ul_args = array(
   'post_type' => 'tribe_events',
   'posts_per_page'=> -1,
@@ -144,7 +112,7 @@ $ul_wp_query->query($ul_args);
     <?php else: ?>
     <div class="row">
       <div class="desktop-12">
-        <h2 class="no-events">Sorry, no upcoming events.</h2>
+        <h2 class="no-events">Sorry, no upcoming events. Check out some past events.</h2>
       </div>
     </div>
   <?php endif; wp_reset_query(); ?>
