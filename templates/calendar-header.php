@@ -1,5 +1,5 @@
-<?php     
-  
+<?php
+
   if( is_tax()){
     $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
     $yolo = '<span class="category category-' . $term->slug . '">' . $term->name . '</span>';
@@ -23,10 +23,10 @@
       ),
   );
 
-  $temp = $wp_query; 
-  $wp_query = null; 
-  $wp_query = new WP_Query(); 
-  $wp_query->query($args); 
+  $temp = $wp_query;
+  $wp_query = null;
+  $wp_query = new WP_Query();
+  $wp_query->query($args);
 
 ?>
 
@@ -90,7 +90,22 @@
     </ul>
     <?php endif; ?>
       <?php if ( is_tax() ) :?>
-      <h1 class="page-header-title"><?php echo $yolo; ?></h1>
+
+      <?php $description  =  get_queried_object()->description;
+      if ( ! empty( $description ) ) {
+        $class = 'has-sub';
+      } else {
+        $class = '';
+      } ?>
+
+
+      <h1 class="page-header-title <?php echo $class; ?>"><?php echo $yolo; ?></h1>
+
+      <?php $description  =  get_queried_object()->description;
+      if ( ! empty( $description ) ) : ?>
+      <h3 class="page-header-subtitle"><?php echo term_description(); ?></h3>
+      <?php endif; ?>
+
       <?php else: ?>
       <h1 class="page-header-title">Calendar</h1>
       <?php endif; ?>
@@ -98,4 +113,4 @@
     </div>
   </div>
 </div>
-<?php endif;?>  
+<?php endif;?>
