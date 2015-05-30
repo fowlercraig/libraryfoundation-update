@@ -9559,6 +9559,10 @@ p.demo_store {
   background: #ffffff;
   z-index: 9;
 }
+.toolbar.page-events {
+  border-bottom: 0;
+  height: auto;
+}
 .toolbar#toolbar,
 .toolbar#event-nav-bar {
   margin-bottom: 0;

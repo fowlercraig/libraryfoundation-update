@@ -1,8 +1,15 @@
 <?php
 
-  if ( is_page( 'blog' ) || is_category() || is_single() ) {
+  if ( is_page( 'young-literati' ) || is_page( 'membership' ) ) {
+
+    $menuLocation = 41;
+    $menuId = 'id="toolbar"';
+    $eventsClass = 'page-events';
+
+  } elseif ( is_page( 'blog' ) || is_category() || is_single() ) {
 
     $menuLocation = 594;
+    $eventsClass = '';
 
   } elseif ( tribe_is_past() || tribe_is_upcoming() && !is_tax() ) {
 
