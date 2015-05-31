@@ -5190,6 +5190,10 @@ html:hover [class^="ss-"] {
 #foot a {
   margin-right: 10px;
 }
+.noboom #member-widget.stuck,
+.noboom #member-widget.boom {
+  position: relative!important;
+}
 #member-widget {
   background: #008bbe;
   -webkit-transition: background-color 300ms ease;

@@ -1,6 +1,6 @@
 <?php Themewrangler::setup_page();get_header(); ?>
 
-<?php 
+<?php
 
   if ( get_field('simple_page')) {
 
@@ -24,7 +24,7 @@
     get_template_part('templates/flex', 'content');
 
   }
-  
+
 
   if (is_ancestor(250)) {
    get_template_part('templates/whatwefund/whatwefund', 'grid' );

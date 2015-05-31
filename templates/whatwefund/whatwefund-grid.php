@@ -85,7 +85,12 @@
 
 <?php
 
-  $category = $_GET['cat'];
+  if ( isset( $_GET['orderby'] ) ) {
+    $category = $_GET['cat'];
+  } else {
+    $category = $_GET['cat'];
+  }
+
 
 ?>
 
@@ -94,6 +99,16 @@
   $(document).ready(function(){
 
     setTimeout(function(){
+
+      <?php
+
+        if ( isset( $_GET['cat'] ) ) {
+          $category = $_GET['cat'];
+        } else {
+          $category = 'featured';
+        }
+
+      ?>
 
        $('#whatwefund-grid').isotope({
         filter: '.<?php echo $category; ?>',
