@@ -1,4 +1,4 @@
-<?php 
+<?php
 
   if ( has_post_thumbnail() ) {
 
@@ -49,7 +49,7 @@
       <div class="row">
         <div class="desktop-10 centered">
           <?php if (!get_sub_field('custom_link')): ?>
-          <span class="sub_title_second"><?php the_field('event_title'); ?></span> | 
+          <span class="sub_title_second"><?php the_field('event_title'); ?></span> |
           <span class="sub_title_second"><?php the_field('event_subtitle'); ?></span>
           <?php else: ?>
           <span class="sub_title_second"><?php the_sub_field('subtitle'); ?></span>
@@ -58,9 +58,11 @@
       </div>
     </div>
   </div>
+  <a class="link right" href="<?php the_permalink();?>">
   <?php if (!get_sub_field('custom_link')): ?>
   <?php echo $featuredImage; ?>
   <?php else: ?>
   <?php echo $mainImage; ?>
   <?php endif; ?>
+  </a>
 </div>
