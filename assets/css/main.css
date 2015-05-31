@@ -10265,24 +10265,34 @@ p.demo_store {
 #home-featured .rsArrow {
   top: 50%;
   margin-top: -30px;
+  opacity: .5;
+}
+#home-featured .rsArrow:hover {
+  opacity: 1;
 }
 #home-featured .rsArrow .rsArrowIcn {
   display: none;
 }
+#home-featured .rsArrow.rsHidden {
+  display: block!important;
+  visibility: visible!important;
+}
 #home-featured .rsArrow.rsArrowRight {
+  display: block!important;
   right: 0;
   left: auto;
-  width: 7.5%;
+  width: 60px;
   height: 60px;
-  background: url(/assets/img/navRight.png) center center no-repeat;
+  background: #ffffff url(/assets/img/navRight.png) center center no-repeat;
   background-size: contain;
 }
 #home-featured .rsArrow.rsArrowLeft {
+  display: block!important;
   left: 0;
-  width: 7.5%;
+  width: 60px;
   right: auto;
   height: 60px;
-  background: url(/assets/img/navLeft.png) center center no-repeat;
+  background: #ffffff url(/assets/img/navLeft.png) center center no-repeat;
   background-size: contain;
 }
 #home-featured header h3 {
