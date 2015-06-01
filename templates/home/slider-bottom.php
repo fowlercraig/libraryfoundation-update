@@ -38,9 +38,6 @@
 
   }
 
-  wp_reset_query();
-
-
 ?>
 
 <div class="slide">
