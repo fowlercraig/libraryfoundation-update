@@ -81,3 +81,5 @@
   <?php endif; ?>
   </a>
 </div>
+
+<?php wp_reset_query(); ?>
