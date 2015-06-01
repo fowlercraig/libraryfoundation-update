@@ -28,11 +28,22 @@
 
   }
 
+  if (get_sub_field('url')){
+
+    $theLink = get_sub_field('url');
+
+  } else {
+
+    $theLink = get_the_permalink();
+
+  }
+
+
 ?>
 
 <div class="slide">
   <div class="content">
-    <a href="<?php the_permalink();?>">
+    <a href="<?php echo $theLink; ?>">
     <div class="meta">
       <div class="row">
         <div class="desktop-10 centered">
@@ -62,7 +73,7 @@
     </div>
     </a>
   </div>
-  <a class="link right" href="<?php the_permalink();?>">
+  <a class="link right" href="<?php echo $theLink; ?>">
   <?php if (!get_sub_field('custom_link')): ?>
   <?php echo $featuredImage; ?>
   <?php else: ?>
