@@ -28,7 +28,7 @@
 
   }
 
-  if (get_sub_field('url')){
+  if ( get_sub_field('custom_link') ){
 
     $theLink = get_sub_field('url');
 
@@ -37,6 +37,8 @@
     $theLink = get_the_permalink();
 
   }
+
+  wp_reset_query();
 
 
 ?>
@@ -82,4 +84,3 @@
   </a>
 </div>
 
-<?php wp_reset_query(); ?>
