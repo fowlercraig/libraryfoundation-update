@@ -1410,8 +1410,6 @@ Mixins
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  margin-top: -25px;
-  margin-left: -25px;
   z-index: 9;
   height: 48px;
   width: 48px;
@@ -9177,8 +9175,6 @@ p.demo_store {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  margin-top: -25px;
-  margin-left: -25px;
   z-index: 9;
   height: 48px;
   width: 48px;
@@ -9204,27 +9200,19 @@ p.demo_store {
   color: #ffffff;
   pointer-events: none;
 }
-.sidebar .event-gallery.item figure {
-  display: none;
-}
-.sidebar .event-gallery.item figure.figure_1 {
-  display: block!important;
-}
-.sidebar .event-gallery.item figure .img-responsive {
-  min-width: 100%;
-}
 .sidebar .video-gallery {
   position: relative;
 }
 .sidebar .video-gallery .play {
   color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   z-index: 2;
   font-size: 32px;
-  margin-left: -20px;
-  margin-top: -20px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .sidebar .video-gallery .title {
   position: absolute;

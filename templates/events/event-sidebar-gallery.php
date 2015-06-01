@@ -76,6 +76,7 @@
 <?php wp_reset_postdata(); ?>
 <?php endif; wp_reset_postdata();?>
 <?php endwhile; ?>
+<?php wp_reset_query(); ?>
 
 <?php // Here's the custom gallery ?>
 
@@ -85,15 +86,27 @@
 <div class="widget gallery">
   <span class="action"><i class="ss-icon ss-gizmo">Plus</i></span>
   <div class="item event-gallery">
-    <?php $counter = 1; foreach( $images as $image ): ?>
-    <figure itemscope itemtype="http://schema.org/ImageObject" class="figure figure_<?php echo $counter; ?>">
+
+    <?php $image  = $images[0]; ?>
+
+    <?php if( $image ) : ?>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="show item_<?php echo $counter; ?>">
     <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
-    <img src="<?php echo $image['sizes']['large']; ?>" class="img-responsive" alt="<?php echo $image['alt']; ?>" itemprop="thumbnail"/>
+    <img class="img-responsive" src="<?php echo $image['sizes']['footer-module-image']; ?>" alt="<?php echo $image['alt']; ?>" />
     </a>
-    <figcaption itemprop="caption description"><?php echo $image['caption']; ?></figcaption>
     </figure>
-    <?php $counter++; // add one per row ?>
-    <?php endforeach; ?>
+    <?php endif; ?>
+
+    <?php $counter = 1; $i = 0; foreach( $images as $image ): $i++; if ($i != 1): ?>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="hidden item_<?php echo $counter; ?>">
+    <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
+    <img class="img-responsive" src="" alt="<?php echo $image['alt']; ?>" />
+    </a>
+    </figure>
+
+    <?php  $counter++; endif; endforeach; ?>
+
+
   </div>
 </div>
 <?php endif; ?>

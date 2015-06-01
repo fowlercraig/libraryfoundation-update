@@ -171,16 +171,7 @@
 
     figure {
 
-      display: none;
 
-      &.figure_1 {
-        display: block!important;
-
-      }
-
-      .img-responsive {
-        min-width: 100%;
-      }
 
     }
 
@@ -190,13 +181,9 @@
     position: relative;
     .play {
       color: @white;
-      position: absolute;
-      top: 50%;
-      left: 50%;
       z-index: 2;
       font-size: 32px;
-      margin-left: -20px;
-      margin-top: -20px;
+      .center();
     }
     .title {
         position: absolute;
