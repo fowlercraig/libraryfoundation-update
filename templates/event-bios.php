@@ -55,6 +55,7 @@
       <?php endif; ?>
 
     </div>
+    <hr class="invisible desktop-hide tablet-hide mobile-3" style="margin-bottom: 0">
     <div class="<?php echo $articleWidth; ?>">
       <h3 class="title"><?php echo get_the_title( $p->ID ); ?></h3>
 
