@@ -40,13 +40,25 @@
     @media @mobile {
       margin-bottom: 50px;
       .cross-sells {
-        display: none;
+        display: block;
       }
     }
     @media @tablet {
       margin-bottom: 0;
       .cross-sells {
         display: block;
+      }
+    }
+    @media @mobile {
+      li {
+        min-width: 100%;
+        a {
+          img {
+            max-width: 25%;
+            float: left;
+            margin-right: 20px!important;
+          }
+        }
       }
     }
     .cross-sells {
@@ -346,3 +358,37 @@ table.cart {
 }
 
 
+.actions .coupon {
+
+  #coupon_code {
+    @media @mobile {
+      max-width: 40%;
+    }
+    @media @tablet {
+      max-width: auto;
+    }
+  }
+
+  .btn-clear {
+
+  @media @mobile {
+    float: left;
+    text-align: left;
+  }
+
+  @media @tablet {
+    float: right;
+  }
+
+}
+
+}
+
+.page-cart {
+
+  &.shifter-enabled .shifter-handle:after {
+    background: @lighterGray;
+    box-shadow: 0 4px 0 @lighterGray, 0 -4px 0@lighterGray;
+  }
+
+}

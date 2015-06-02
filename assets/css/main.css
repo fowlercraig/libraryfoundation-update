@@ -11906,7 +11906,7 @@ animated buttons - animate the text inside prev and next buttons
     margin-bottom: 50px;
   }
   .woocommerce .cart-collaterals .cross-sells {
-    display: none;
+    display: block;
   }
 }
 @media screen and (min-width: 740px) {
@@ -11915,6 +11915,16 @@ animated buttons - animate the text inside prev and next buttons
   }
   .woocommerce .cart-collaterals .cross-sells {
     display: block;
+  }
+}
+@media screen and (min-width: 320px) {
+  .woocommerce .cart-collaterals li {
+    min-width: 100%;
+  }
+  .woocommerce .cart-collaterals li a img {
+    max-width: 25%;
+    float: left;
+    margin-right: 20px!important;
   }
 }
 @media screen and (min-width: 740px) {
@@ -12125,6 +12135,31 @@ table.cart .product-subtotal {
   min-width: 100%;
   margin: 0;
 }
+@media screen and (min-width: 320px) {
+  .actions .coupon #coupon_code {
+    max-width: 40%;
+  }
+}
+@media screen and (min-width: 740px) {
+  .actions .coupon #coupon_code {
+    max-width: auto;
+  }
+}
+@media screen and (min-width: 320px) {
+  .actions .coupon .btn-clear {
+    float: left;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 740px) {
+  .actions .coupon .btn-clear {
+    float: right;
+  }
+}
+.page-cart.shifter-enabled .shifter-handle:after {
+  background: #cccccc;
+  box-shadow: 0 4px 0 #cccccc, 0 -4px 0 #cccccc;
+}
 /* START Make the cart table responsive */
 /* http://css-tricks.com/responsive-data-tables/ */
 @media screen and (max-width: 740px) {
@@ -12155,7 +12190,15 @@ table.cart .product-subtotal {
     background: none;
     text-align: left;
   }
-  .woocommerce-page table.shop_table td:last-child {
+  .woocommerce-page table.shop_table td.actions {
+    border: 1px solid #dddddd !important;
+    border-bottom: 0;
+    position: relative;
+    padding-left: 30% !important;
+    background: none;
+    text-align: left;
+  }
+  .woocommerce-page table.shop_table td.actions:last-child {
     border-bottom: 1px solid #dddddd;
   }
   .woocommerce-page table.shop_table {
@@ -16635,7 +16678,7 @@ mfp-fade.mfp-bg {
   padding: 0;
 }
 .shifter-navigation .main-nav a {
-  color: #ffffff;
+  color: red;
   display: block;
   font-family: 'gotham', arial;
   text-transform: uppercase;
