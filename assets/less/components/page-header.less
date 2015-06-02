@@ -142,11 +142,19 @@
 }
 
 .cart-header {
+
   .buttons {
 
     display: block;
-    float: right;
-    height: 60px;
+
+    @media @mobile {
+      float: none;
+      height: 60px;
+    }
+
+    @media @desktop {
+      float: right;
+    }
 
     .button {
       border: none;
@@ -155,6 +163,17 @@
       padding: 0;
       padding-left: 10px;
       .cat();
+
+      @media @mobile {
+        padding-left: 0;
+        .font_size(10);
+      }
+
+      @media @tablet {
+        padding-left: 10px;
+        .font_size(11);
+      }
+
     }
 
   }
