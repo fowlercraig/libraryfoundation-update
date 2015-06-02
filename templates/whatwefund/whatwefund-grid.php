@@ -117,9 +117,11 @@
       $('#whatwefund-filters .button').removeClass('active');
       $('#whatwefund-filters .button.<?php echo $category; ?>').addClass('active');
 
+      <?php if ( isset( $_GET['cat'] ) ) {?>
       $('html, body').animate({
         scrollTop: $('#whatwefund-filters').offset().top - 50
       }, 300);
+      <?php } ?>
 
     },200);
 
