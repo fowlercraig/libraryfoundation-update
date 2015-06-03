@@ -166,3 +166,5 @@
 
 </body>
 </html>
+
+<?php echo $wpdb->num_queries; ?> <?php _e('queries'); ?>. <?php timer_stop(1); ?> <?php _e('seconds'); ?>
