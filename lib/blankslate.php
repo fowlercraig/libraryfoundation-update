@@ -101,6 +101,7 @@ add_image_size( 'large-cropped', 993, 780, true );
 add_image_size( 'homepage-thumb', 400, 400, true );
 add_image_size( 'header-bg', 1280, 600, array('center', 'top'), true );
 add_image_size( 'footer-module-image', 600, 335, true );
+add_image_size( 'event-gallery-thumb', 600, 335, array('center', 'top'), true );
 add_image_size( 'event-bio', 700, 375, true );
 add_image_size( 'whatwefund', 700, 550, true );
 add_image_size( 'archive-small', 700, 450, true );

@@ -24,7 +24,7 @@
     <?php if( $image ) : ?>
     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="show item_<?php echo $counter; ?>">
     <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
-    <img class="img-responsive" src="<?php echo $image['sizes']['footer-module-image']; ?>" alt="<?php echo $image['alt']; ?>" />
+    <img class="img-responsive" src="<?php echo $image['sizes']['event-gallery-thumb']; ?>" alt="<?php echo $image['alt']; ?>" />
     </a>
     </figure>
     <?php endif; ?>
