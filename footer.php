@@ -162,7 +162,7 @@
 <?php wp_footer(); ?>
 <?php include locate_template('/lib/photoswipe.php' );?>
 <?php include locate_template('/templates/search-footer.php' );?>
-
+<!--[if lte IE 6]><script src="/assets/warning/warning.js"></script><script>window.onload=function(){e("/assets/warning/")}</script><![endif]-->
 
 </body>
 </html>

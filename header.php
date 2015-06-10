@@ -14,9 +14,14 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!--[if IE]>[...]<![endif]-->
 
 <?php wp_head(); ?>
+
+
+<!--[if lt IE 9]>
+<script src="/assets/javascripts/respond.min.js"></script>
+<script src="/assets/javascripts/pie.js"></script>
+<![endif]-->
 
 
 <script src="//use.typekit.net/kfw6qzi.js"></script>
